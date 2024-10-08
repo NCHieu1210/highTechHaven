@@ -1,0 +1,176 @@
+@import "../../baseSCSS/variable";
+@import "../../baseSCSS/App";
+
+.userDetails {
+  // padding: 0 20px;
+  animation: fadeInRight;
+  /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 0.7s;
+
+  @media screen and (max-width: $desktop-width) {
+    animation: fadeIn;
+    animation-duration: 0.7s;
+    padding-top: 15px;
+  }
+
+  /* don't forget to set a duration! */
+  h1 {
+    font-size: calc(15px + 1vmin);
+  }
+
+  overflow: hidden;
+
+  .title {
+    width: 100%;
+    @include display-flex;
+    justify-content: space-between;
+
+    div:last-child button {
+      height: 35px;
+      width: 200px;
+    }
+  }
+
+  &__form {
+    @include display-flex;
+    justify-content: space-between;
+
+    >div:last-child {
+      @include display-flex;
+      flex-direction: column;
+    }
+
+    @media (max-width: $mobile-width) {
+      flex-direction: column;
+
+      >div:first-child {
+        order: 2;
+      }
+
+      >div:last-child {
+        @include display-flex;
+        flex-direction: column;
+      }
+    }
+
+    &>div {
+      width: 50%;
+
+      &:last-child {
+        @include display-flex;
+        justify-content: start;
+      }
+
+      @media (max-width: $mobile-width) {
+        width: 100%;
+      }
+    }
+
+    &--avatar {
+      .ant-upload-list-item-container {
+        width: 300px !important;
+        height: 300px !important;
+      }
+
+      .ant-upload {
+        width: 300px !important;
+        height: 50px !important;
+      }
+
+      .ant-upload.ant-upload-select.ant-upload-disabled {
+        display: none !important;
+      }
+
+      @media (max-width: $mobile-width) {
+        .ant-upload-list-item-container {
+          width: 100% !important;
+          aspect-ratio: 1/1;
+          object-fit: cover;
+        }
+
+        .ant-upload {
+          width: 100% !important;
+        }
+
+      }
+    }
+
+    &--btn {
+      padding: 0 25px;
+
+      @media (max-width: $mobile-width) {
+        padding: 0 77px;
+        left: 0;
+        right: auto;
+      }
+    }
+
+    &--edit {
+      margin-left: 10px;
+      background-color: $clorTwo;
+
+      span,
+      svg {
+        color: white;
+      }
+
+      &:hover {
+        background-color: white;
+        border-color: $clorTwoHover !important;
+
+        span,
+        svg {
+          color: $clorTwoHover;
+        }
+      }
+    }
+  }
+
+  .displayNone {
+    display: none;
+  }
+
+  //Pagination in table
+
+  .ant-spin-container {
+    ul li {
+      margin: 0 5px !important;
+      margin-top: 20px !important;
+    }
+
+    .ant-pagination-item-active {
+      a {
+        color: $clorTwoHover !important;
+      }
+
+      border-color:$clorTwoHover;
+    }
+  }
+
+  &__deliveryAddress {
+    @include display-flex;
+    justify-content: space-between;
+  }
+}
+
+.changePassword {
+  width: 100%;
+  text-align: center;
+
+  &__button {
+    button {
+      background-color: $clorTwo;
+      color: $clorOne;
+
+      &:hover {
+        background-color: white !important;
+        border-color: $clorTwoHover;
+
+        span,
+        svg {
+          color: $clorTwoHover;
+        }
+      }
+    }
+  }
+}

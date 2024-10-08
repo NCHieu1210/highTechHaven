@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import "./variable";
+
+
+* {
+  box-sizing: border-box;
+  font-size: calc(10px + 1vmin);
+  font-family: "Roboto", sans-serif;
+  // font-family: $font;
+  padding: 0;
+  margin: 0;
+  // font-family: $font;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Tùy chỉnh màu chữ cho thông báo thành công================================================= */
+.ant-message-custom-content.ant-message-success {
+  span {
+    color: green !important;
+  }
+}
+
+/* END Tùy chỉnh màu chữ cho thông báo thành công */
+
+
+/* Tùy chỉnh màu chữ cho thông báo lỗi */
+.ant-message-custom-content.ant-message-error {
+  span {
+    color: red !important;
+  }
+}
+
+/*END Tùy chỉnh màu chữ cho thông báo lỗi */
+
+//ant-tag
+.ant-tag {
+  font-size: calc(7px + 1vmin) !important;
+}
+
+//END ant-tag
+
+//Model
+
+.ant-modal-content {
+
+  .ant-modal-title {
+    color: $clorTwoHover;
+    font-size: calc(15px + 1vmin);
+  }
+
+  .ant-form-item-explain-error {
+    font-size: 17px !important;
+  }
+}
+
+//END Model
+
+.ant-form-item-control-input-content {
+
+  .ant-select span {
+    font-size: calc(7px + 1vmin) !important;
+
+  }
+}
+
+// Popconfirm
+.ant-popconfirm-buttons {
+  button {
+    height: 40px;
+    padding: 0 20px;
+  }
+}
+
+//END Popconfirm
+
+//Drawer
+.ant-drawer-title {
+  color: $clorTwoHover !important;
+}
+
+//END Drawer
+
+//Spin
+.ant-spin-dot-item {
+  background-color: $clorTwoHover !important;
+}
+
+//END Spin
+
+//Pagination
+.ant-pagination-item-active {
+  a {
+    color: $clorTwoHover !important;
+  }
+
+  border-color:$clorTwoHover !important;
+}
+
+//END Pagination
+
+//Admin Class
+
+.admin {
+
+  animation: fadeInRight;
+  /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 0.7s;
+
+  /* don't forget to set a duration! */
+  //Table
+  h1 {
+    font-size: calc(15px + 1vmin);
+    color: $clorTwoHover;
+  }
+
+  td {
+    font-size: calc(9px + 1vmin);
+  }
+
+  //END Table
+
+  //Header table
+  thead {
+    position: sticky;
+    top: 90px;
+    z-index: 999;
+
+    .ant-table-row {
+      background-color: #28a745 !important;
+    }
+
+    .ant-table-row-selected {
+      background-color: #28a745 !important;
+    }
+  }
+
+  &__header {
+    @include display-flex();
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  //END Header table
+
+
+  //Button header
+  &__button {
+    height: $heightButton;
+    padding: $paddingButton;
+
+    &--add {
+      background-color: $clorTwo !important;
+      color: $clorOne !important;
+      margin-left: 20px;
+
+      &:hover {
+        background-color: white !important;
+        color: $clorTwoHover !important;
+        border: 1px solid $clorTwoHover !important;
+      }
+    }
+
+    &--goBack {
+      margin-left: 20px;
+
+      &:hover {
+        background-color: white !important;
+        color: $clorTwoHover !important;
+        border: 1px solid $clorTwoHover !important;
+      }
+    }
+
+    &--delete {
+      &:hover {
+        background-color: white !important;
+        color: $dange !important;
+        border: 1px solid $dange !important;
+      }
+    }
+  }
+
+  //END Button header
+  .ant-table-content .ant-table-cell {
+    .ant-btn {
+      margin-left: 0 !important;
+      margin-right: 15px !important;
+    }
+
+    .btn__edit {
+      color: $clorOne !important;
+
+      &:hover {
+        border-color: $clorTwoHover !important;
+
+        svg {
+          color: $clorTwoHover !important;
+        }
+      }
+    }
+  }
+
+  //Pagination in table
+
+  .ant-spin-container {
+    ul li {
+      margin: 0 5px !important;
+      margin-top: 20px !important;
+    }
+
+    .ant-pagination-item-active {
+      a {
+        color: $clorTwoHover !important;
+      }
+
+      border-color:$clorTwoHover !important;
+    }
+  }
+
+  //END Pagination in table
+
+  //Ant design
+  .css-dev-only-do-not-override-j9bb5n .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: $dange;
+    border-color: $dange;
+  }
+
+  .css-dev-only-do-not-override-j9bb5n.ant-table-wrapper .ant-table-tbody .ant-table-row.ant-table-row-selected>.ant-table-cell {
+    background-color: #ff777527;
+  }
+
+  .css-dev-only-do-not-override-j9bb5n.ant-table-wrapper .ant-table-tbody .ant-table-row.ant-table-row-selected:hover {
+    background-color: #BAE0FF;
+  }
+
+  .css-dev-only-do-not-override-j9bb5n.ant-checkbox-indeterminate .ant-checkbox-inner:after {
+    background-color: $dange;
+    border-color: $dange;
+
+  }
+
+  //END Ant design
+}
+
+//END Admin Class=================================================

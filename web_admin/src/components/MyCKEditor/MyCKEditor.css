@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@media print {
+	body {
+		margin: 0 !important;
+	}
+}
+
+.main-container {
+	font-family: 'Lato';
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+
+}
+/* Đảm bảo dấu chấm và văn bản trên cùng một dòng */
+.ck-content ul, .ck-content ol {
+    margin: 0;
+    padding-left: 20px; 
+}
+
+/* Đảm bảo văn bản và dấu chấm không bị tách ra */
+.ck-content ul li, .ck-content ol li {
+    display: list-item;
+    margin: 0;
+    padding-left: 0;
+}
+
+.ck-content {
+	font-family: 'Lato';
+	line-height: 1.6;
+	word-break: break-word;
+	width: 100%;
+	min-height: 1500px;
+}
+.ck-sticky-panel__content_sticky{
+	top: 90px !important
+}
+
+.editor-container_classic-editor .editor-container__editor {
+	/* min-width: 795px;
+	max-width: 795px; */
+	width: 100%;
+}

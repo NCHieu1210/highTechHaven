@@ -1,0 +1,102 @@
+@import "../../../baseSCSS/variable";
+
+.register {
+  h1 {
+    color: $clorOne;
+    margin-top: 50px;
+    font-size: calc(30px + 1vmin);
+
+    @media (max-width: $desktop-width) {
+      margin-top: 20px;
+    }
+
+    @media (max-width: $mobile-width) {
+      margin-top: 15px;
+    }
+  }
+
+  hr {
+    background-color: $clorTwo;
+    width: 100%;
+    border: none;
+    height: 1px;
+  }
+
+  &__form {
+    width: 100%;
+    padding: 0 15%;
+
+    @media (max-width: $mobile-width) {
+      padding: 0;
+    }
+
+    .colOne {
+      animation: bounceInLeft;
+      /* referring directly to the animation's @keyframe declaration */
+      animation-duration: 1s;
+    }
+
+    .colTwo {
+      animation: bounceInRight;
+      /* referring directly to the animation's @keyframe declaration */
+      animation-duration: 1s;
+    }
+
+    label {
+      font-size: calc(8px + 1vmin) !important;
+    }
+
+    .btn {
+      width: 100%;
+      @include display-flex;
+      justify-content: center;
+      align-items: center;
+      animation: bounceInUp;
+      /* referring directly to the animation's @keyframe declaration */
+      animation-duration: 1s;
+
+      @media (max-width: $mobile-width) {
+        flex-direction: column;
+
+        button:first-child {
+          order: 2;
+          margin-top: 20px !important;
+        }
+      }
+
+      &__backLogin,
+      &__register {
+        min-width: 222px;
+
+        &:hover {
+          background-color: white !important;
+          border-color: $clorTwoHover !important;
+
+          span {
+            color: $clorTwoHover !important;
+          }
+        }
+
+        @media (max-width: $mobile-width) {
+          margin: 0 !important;
+          width: 100%;
+        }
+      }
+
+      &__backLogin {
+        background-color: white;
+        border-color: $clorOne;
+        margin-right: 30px;
+
+        span {
+          color: $clorOne;
+        }
+      }
+
+      &__register {
+        background-color: $clorTwo;
+        color: $clorOne;
+      }
+    }
+  }
+}

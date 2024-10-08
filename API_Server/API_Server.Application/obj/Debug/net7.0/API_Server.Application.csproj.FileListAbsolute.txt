@@ -1,0 +1,31 @@
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Application\bin\Debug\net7.0\API_Server.Application.deps.json
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Application\bin\Debug\net7.0\API_Server.Application.dll
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Application\bin\Debug\net7.0\API_Server.Application.pdb
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Application\bin\Debug\net7.0\API_Server.Domain.dll
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Application\bin\Debug\net7.0\API_Server.Domain.pdb
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Application\obj\Debug\net7.0\API_Server.Application.csproj.AssemblyReference.cache
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Application\obj\Debug\net7.0\API_Server.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Application\obj\Debug\net7.0\API_Server.Application.AssemblyInfoInputs.cache
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Application\obj\Debug\net7.0\API_Server.Application.AssemblyInfo.cs
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Application\obj\Debug\net7.0\API_Server.Application.csproj.CoreCompileInputs.cache
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Application\obj\Debug\net7.0\API_Server.Application.sourcelink.json
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Application\obj\Debug\net7.0\API_Serv.D6015395.Up2Date
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Application\obj\Debug\net7.0\API_Server.Application.dll
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Application\obj\Debug\net7.0\refint\API_Server.Application.dll
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Application\obj\Debug\net7.0\API_Server.Application.pdb
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Application\obj\Debug\net7.0\ref\API_Server.Application.dll
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Application\bin\Debug\net7.0\API_Server.Application.deps.json
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Application\bin\Debug\net7.0\API_Server.Application.dll
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Application\bin\Debug\net7.0\API_Server.Application.pdb
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Application\bin\Debug\net7.0\API_Server.Domain.dll
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Application\bin\Debug\net7.0\API_Server.Domain.pdb
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Application\obj\Debug\net7.0\API_Server.Application.csproj.AssemblyReference.cache
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Application\obj\Debug\net7.0\API_Server.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Application\obj\Debug\net7.0\API_Server.Application.AssemblyInfoInputs.cache
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Application\obj\Debug\net7.0\API_Server.Application.AssemblyInfo.cs
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Application\obj\Debug\net7.0\API_Server.Application.csproj.CoreCompileInputs.cache
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Application\obj\Debug\net7.0\API_Serv.D6015395.Up2Date
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Application\obj\Debug\net7.0\API_Server.Application.dll
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Application\obj\Debug\net7.0\refint\API_Server.Application.dll
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Application\obj\Debug\net7.0\API_Server.Application.pdb
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Application\obj\Debug\net7.0\ref\API_Server.Application.dll

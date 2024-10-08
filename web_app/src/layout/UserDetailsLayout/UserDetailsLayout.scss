@@ -1,0 +1,121 @@
+@import "../../baseSCSS/variable";
+
+.userDetailsLayout {
+  @media screen and (max-width: $desktop-width) {
+    padding: 0;
+    border-left: none;
+
+    >div {
+      @include display-flex;
+      flex-direction: column;
+
+      .ant-space-compact {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 99;
+        background-color: white;
+        border-top: 1px solid rgba(5, 5, 5, 0.06);
+        border-right: none;
+      }
+
+      ul {
+        @include display-flex;
+        justify-content: space-between;
+        border-right: none;
+
+        li {
+          padding: 0 !important;
+          text-align: center;
+
+        }
+      }
+    }
+  }
+
+  &__content {
+    padding-left: 50px;
+    margin-left: 0;
+    min-height: 70vh;
+    border-left: 1px solid rgba(5, 5, 5, 0.06);
+    background-color: white;
+
+    @media screen and (max-width: $desktop-width) {
+      padding: 0;
+      border-left: none;
+      // overflow: hidden;
+    }
+  }
+
+  &__sider {
+    background-color: white;
+
+    span a,
+    svg {
+      font-size: calc(9px + 1vmin) !important;
+    }
+
+    ul {
+      border: none !important;
+    }
+  }
+
+  .ant-layout-sider {
+    max-height: 80vh;
+    position: sticky !important;
+    z-index: 99;
+    top: 77px;
+  }
+
+  h1 {
+    color: $clorTwo !important;
+  }
+
+  .ant-menu-item {
+    span {
+      color: $clorOne;
+    }
+  }
+
+  .ant-menu-item-selected {
+    background-color: $clorOneOpacity !important;
+
+    span {
+      color: $clorTwo !important;
+      font-weight: 500;
+    }
+  }
+
+  .ant-menu-submenu-selected>.ant-menu-submenu-title {
+    color: $clorTwoHover !important;
+    font-weight: 600;
+  }
+
+  .ant-menu.ant-menu-sub.ant-menu-inline {
+    background-color: #eeeeee;
+  }
+
+  .demo-logo-vertical {
+    width: 100%;
+    height: 32px;
+    background-color: #f88d00;
+  }
+
+  .ant-float-btn-body {
+    background-color: $clorTwo !important;
+
+    span {
+      color: white;
+    }
+
+    &:hover {
+      background-color: white !important;
+
+      span {
+        color: $clorTwoHover;
+      }
+    }
+
+  }
+}

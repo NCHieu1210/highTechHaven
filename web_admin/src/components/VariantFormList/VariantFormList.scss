@@ -1,0 +1,34 @@
+@import "../../baseSCSS/variable";
+
+.variant {
+  display: flex;
+  row-gap: 16;
+  flex-direction: column;
+
+  &__close {
+    color: rgba(255, 0, 0, 0.777);
+  }
+
+  &__card {
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.1);
+    margin: 22px 0;
+  }
+
+  &__detail {
+    @include display-flex();
+    flex-direction: column;
+    align-items: center;
+
+    .ant-space-item {
+      padding-left: 10px;
+
+      &>span {
+        color: rgba(255, 0, 0, 0.777);
+
+        svg {
+          font-size: calc(20px + 1vmin);
+        }
+      }
+    }
+  }
+}

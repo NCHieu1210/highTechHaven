@@ -1,0 +1,425 @@
+@import "../../baseSCSS/variable";
+
+.postDetails {
+  @include display-flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @media screen and (max-width: $desktop-width) {
+    flex-direction: column;
+  }
+
+  h1 {
+    color: $clorTwoHover;
+    font-size: calc(16px + 1vmin);
+  }
+
+  h2 strong {
+    font-size: calc(14px + 1vmin);
+  }
+
+  h3 strong {
+    font-size: calc(12px + 1vmin);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin-bottom: 12px;
+  }
+
+  &__left {
+    width: 80% !important;
+
+    @media screen and (max-width: $desktop-width) {
+      width: 100% !important;
+    }
+
+    &--image {
+      >div>div {
+        width: 100%;
+      }
+
+      img,
+      .ant-image-mask {
+        height: auto;
+        border-radius: 15px;
+      }
+    }
+
+    &--content {
+      padding: 0 50px;
+      width: 100% !important;
+      position: relative;
+
+      &>div {
+        transform: translateY(-122px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        padding: 25px;
+        border-radius: 20px;
+        line-height: 1.5;
+        z-index: 999;
+        background-color: white;
+
+      }
+
+      @media screen and (max-width: $desktop-width) {
+        padding: 0 15px;
+
+        &>div {
+          transform: translateY(-70px);
+        }
+      }
+
+      .content__content {
+
+        figure {
+          margin: 20px auto;
+          text-align: center;
+          width: 100% !important;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 10px;
+          object-fit: cover;
+        }
+
+        table {
+          border-collapse: collapse;
+          margin: 25px 0;
+          table-layout: fixed;
+          width: 100%;
+
+          th,
+          td {
+            border: 1px solid gray;
+            padding: 10px;
+            max-width: 300px;
+          }
+        }
+
+        h2,
+        h3 {
+          margin-top: 25px;
+          margin-bottom: 10px;
+        }
+
+        p>em {
+          display: block;
+          margin-bottom: 25px;
+          margin-top: -20px;
+        }
+
+      }
+
+      .content {
+        &__blog strong {
+          background-color: $clorTwo;
+          border-radius: 5px;
+          padding: 10px;
+          margin-top: 10px;
+        }
+
+        &__author {
+          @include display-flex();
+          justify-content: space-between;
+
+          &--right {
+            @include display-flex();
+
+            .ant-avatar {
+              min-width: 50px;
+              height: auto;
+              aspect-ratio: 1/1;
+              margin-right: 10px;
+
+              img {
+                width: 50px;
+                height: auto;
+                aspect-ratio: 1/1;
+                border: 2px solid $clorTwoHover;
+                border-radius: 50%;
+              }
+            }
+          }
+
+          &--left {
+            color: gray;
+
+            svg {
+              margin-right: 5px;
+            }
+
+            button {
+              padding: 0;
+              border: none;
+              color: gray !important;
+
+              &:hover svg {
+                color: #0637fc;
+              }
+            }
+          }
+
+          &--time {
+            em {
+              color: gray;
+              font-size: calc(7px + 1vmin);
+            }
+
+            svg {
+              margin-right: 5px;
+              font-size: calc(7px + 1vmin);
+            }
+          }
+        }
+      }
+    }
+
+
+    &--like {
+      margin-top: 10px;
+      text-align: end;
+
+      button {
+        aspect-ratio: 1/1;
+        padding: 0;
+        border-radius: 50%;
+        border-color: #067CFC;
+        color: #067CFC;
+
+
+        svg {
+          color: #067CFC;
+        }
+
+        &:hover {
+          border-color: #0637fc !important;
+
+          svg {
+            color: #0637fc;
+          }
+        }
+      }
+
+      em {
+        padding-left: 10px;
+        font-size: calc(7px + 1vmin);
+
+        @media screen and (max-width: $desktop-width) {
+          font-size: calc(10px + 1vmin);
+        }
+      }
+    }
+
+    &--comment {
+      padding: 0 50px;
+      transform: translateY(-50px);
+
+      @media screen and (max-width: $desktop-width) {
+        padding: 0 15px;
+      }
+    }
+  }
+
+  &__right {
+    position: sticky;
+    top: 35px;
+    transform: scale(0.9);
+    width: 22%;
+    text-align: right;
+
+    h2 {
+      color: $clorTwoHover;
+      font-size: calc(15px + 1vmin);
+    }
+
+    hr {
+      width: 80%;
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    @media screen and (max-width: $desktop-width) {
+      width: 100%;
+      text-align: left;
+
+      hr {
+        width: 100%;
+      }
+
+      &>div {
+        @include display-flex();
+        justify-content: space-between;
+      }
+    }
+
+    &--card {
+      width: 100%;
+      text-align: left;
+
+      >div {
+        width: 80%;
+
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      @media screen and (max-width: $desktop-width) {
+        width: 50%;
+        padding: 0 10px;
+
+        >div {
+          width: 100%;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.userListPructsLayout {
+  .layout {
+    &__fillter {
+      position: sticky;
+      top: 180px;
+      max-height: 77vh;
+      overflow: auto;
+
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+    }
+
+    a h2 {
+      color: $clorOne !important;
+    }
+
+    a:hover {
+      .ant-list-item-meta-title h2 {
+        color: $clorTwoHover !important;
+      }
+
+      .content__avatar img {
+        transform: scale(1.2);
+        transition: 0.3s;
+      }
+    }
+
+    &__content {
+      li {
+        margin-bottom: 20px;
+      }
+
+      @media screen and (max-width: $mobile-width) {
+        .ant-list-item-meta {
+          @include display-flex();
+          flex-direction: column;
+          width: 100% !important;
+        }
+
+        .ant-list-item-meta-content {
+          width: 100% !important;
+        }
+
+        .ant-list-item-meta-avatar {
+          margin: 0 !important;
+        }
+      }
+
+      &--post {
+        .content {
+          &__avatar {
+            width: 400px;
+            height: auto;
+            aspect-ratio: 5/3;
+            border-radius: 10px;
+            transition: 0.3s;
+
+            @media screen and (max-width: $desktop-width) {
+              width: 300px;
+            }
+
+            @media screen and (max-width: $mobile-width) {
+              width: 100%;
+            }
+          }
+
+          &__description {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            * {
+              font-size: calc(5px + 1vmin);
+              color: gray !important;
+            }
+
+            img {
+              display: none;
+            }
+
+            em {
+              padding-left: 20px;
+            }
+
+            @media screen and (max-width: $desktop-width) {
+              display: none;
+            }
+
+            @media screen and (max-width: $mobile-width) {
+              display: -webkit-box;
+
+              * {
+                font-size: calc(10px + 1vmin);
+                color: gray !important;
+              }
+            }
+          }
+
+          &__footer {
+            margin-top: 10px;
+
+            em {
+              color: $clorOne;
+            }
+
+            &>div:first-child em {
+              color: $clorTwoHover;
+            }
+
+            .ant-space-item:first-child {
+              width: 30px;
+              text-align: center;
+            }
+
+            svg {
+              color: $clorOne;
+            }
+
+            .ant-avatar {
+              border: 1px solid $clorTwoHover;
+            }
+
+            @media screen and (max-width: $mobile-width) {
+              @include display-flex();
+              justify-content: space-between;
+              align-items: center;
+
+              >div:nth-child(2),
+              svg {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

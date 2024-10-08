@@ -1,0 +1,238 @@
+@import "../../baseSCSS/variable";
+
+.switch__status {
+  span {
+    font-size: calc(7px + 1vmin) !important;
+  }
+
+  padding: 0 5px;
+}
+
+.admin__product {
+  input {
+    font-size: calc(7px + 1vmin) !important;
+  }
+
+  h2 {
+    color: $clorOneOpacity;
+  }
+
+  &--spaceInfo {
+    width: 100%;
+
+    .ant-space-item {
+      width: 100%;
+    }
+
+    .ant-select-selection-item {
+      img {
+        display: none;
+      }
+
+      span {
+        padding: 0;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &--select {
+    align-content: center;
+
+    img {
+      width: 50px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
+
+    span {
+      display: inline-block;
+      padding-left: 10px;
+      align-content: center;
+      transform: translateY(-15px);
+    }
+  }
+
+  &--form--button {
+    @include display-flex();
+    justify-content: space-between;
+    align-items: center;
+
+    >div {
+      width: 47%;
+    }
+
+    button {
+      width: 100%;
+      margin: 0;
+      padding: 25px;
+      border-radius: 25px;
+    }
+  }
+
+  .custom-label {
+    font-size: calc(7px + 1vmin) !important;
+    color: $clorOne !important;
+  }
+
+  .ant-upload-drag-container {
+    .ant-upload-drag-icon svg {
+      font-size: calc(25px + 1vmin) !important;
+
+    }
+
+    .ant-upload-text {
+      font-size: calc(10px + 1vmin) !important;
+
+    }
+
+    .ant-upload-hint {
+      font-size: calc(7px + 1vmin) !important;
+    }
+  }
+
+  .ant-row.ant-form-item-row.css-dev-only-do-not-override-j9bb5n {
+    justify-content: end;
+  }
+
+  .ant-upload-list-item-container {
+    a {
+      color: gray;
+    }
+  }
+
+  &--card {
+    .ant-card {
+      background-color: #ffab3d18;
+    }
+
+    .ant-card-head-title {
+      color: $clorOne;
+    }
+
+    p {
+      color: $clorOne;
+    }
+
+    .ant-ribbon {
+      height: 30px;
+      padding-top: 5px;
+    }
+  }
+}
+
+.productDetail {
+  .model__content {
+    max-height: 85vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  /* Tùy chỉnh thanh cuộn */
+  .model__content::-webkit-scrollbar {
+    width: 5px;
+    /* Độ rộng thanh cuộn */
+  }
+
+  .model__content::-webkit-scrollbar-thumb {
+    background-color: #888;
+    /* Màu của thanh cuộn */
+    border-radius: 4px;
+    /* Bo tròn góc thanh cuộn */
+  }
+
+  .model__content::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+    /* Màu khi hover */
+  }
+
+  .model__content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* Màu nền của thanh cuộn */
+  }
+
+  h2 {
+    color: $clorTwoHover;
+    font-size: calc(12px + 1vmin) !important;
+  }
+
+  em {
+    color: gray;
+    display: inline;
+  }
+
+  img {
+    width: 150px !important;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    margin: 15px 0;
+  }
+
+  .ant-modal-title {
+    text-align: center;
+  }
+
+  &__info {
+    @include display-flex();
+    justify-content: space-around;
+  }
+
+  &__card {
+    box-shadow: 7px 7px 10px 10px rgba(0, 0, 0, 0.1) !important;
+
+    &--title {
+      @include display-flex();
+      justify-content: space-between;
+    }
+  }
+
+  &__image {
+    justify-content: center;
+    text-align: center;
+    display: flex; // Sử dụng Flexbox để sắp xếp các thẻ con theo hàng
+    overflow-x: auto; // Thêm thanh cuộn ngang khi có quá nhiều thẻ con
+    white-space: nowrap; // Đảm bảo các thẻ con không xuống dòng
+    padding: 10px; // Thêm một chút padding nếu cần
+    box-shadow: 7px 7px 10px 10px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 0 0 8px 8px;
+
+
+    // Thanh cuộn tùy chỉnh
+    &::-webkit-scrollbar {
+      height: 8px; // Chiều cao của thanh cuộn ngang
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: darkgrey; // Màu của thanh cuộn
+      border-radius: 10px; // Bo tròn các góc của thanh cuộn
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1; // Màu nền của đường ray thanh cuộn
+    }
+
+    img {
+      width: 150px !important;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
+  }
+
+  &__variant {
+    width: 100%;
+
+    .ant-space-item:nth-child(2) {
+      width: 100%;
+
+      >div {
+        width: 100%;
+
+      }
+    }
+
+    &--info {
+      @include display-flex();
+      justify-content: space-between !important;
+    }
+  }
+}

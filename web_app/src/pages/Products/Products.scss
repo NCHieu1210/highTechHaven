@@ -1,0 +1,362 @@
+@import "../../baseSCSS/variable";
+
+.productDtails {
+  @include display-flex;
+  justify-content: space-between;
+  animation: fadeInUp;
+  /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 0.7s;
+
+  @media (max-width: $desktop-width) {
+    flex-direction: column;
+  }
+
+  &__hide {
+    display: none;
+  }
+
+  .isSelected {
+    border-color: $clorTwoHover !important;
+    color: $clorTwoHover !important;
+
+    span,
+    svg,
+    p,
+    em {
+      color: $clorTwoHover !important;
+      font-weight: 600 !important;
+    }
+  }
+
+  .isSelectedIcon {
+    position: absolute;
+    right: 3px;
+    top: -5px;
+  }
+
+  hr {
+    background-color: $clorTwo;
+    width: 100%;
+    border: none;
+    height: 1px;
+  }
+
+  h1 {
+    font-size: calc(15px + 1vmin);
+    color: $clorTwoHover;
+  }
+
+  h2:first-child {
+    font-size: calc(12px + 1vmin);
+    color: $clorTwoHover;
+  }
+
+  .ant-card-head-title {
+    font-size: calc(12px + 1vmin);
+    color: $clorTwoHover;
+    word-wrap: break-word;
+    white-space: normal;
+  }
+
+  img {
+    border-radius: 10px;
+  }
+
+  &__left {
+    width: 65%;
+
+    @media (max-width: $desktop-width) {
+      width: 100%;
+    }
+
+    .ant-image-mask:hover {
+      border-radius: 10px !important;
+    }
+
+    &--content {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+      border-radius: 20px;
+      line-height: 1.5;
+
+
+      ul {
+        padding-left: 50px;
+      }
+
+      .content {
+        margin-top: 10px;
+
+        table {
+          border-collapse: collapse;
+          width: 100%;
+          margin: 25px 0;
+
+          th,
+          td {
+            border: 1px solid gray;
+            padding: 10px;
+          }
+        }
+
+        h2,
+        h3 {
+          margin-top: 25px;
+          margin-bottom: 10px;
+        }
+
+        p>em {
+          display: block;
+          margin-bottom: 25px;
+          margin-top: -20px;
+        }
+
+        img {
+          margin: 25px 0;
+          width: 100% !important;
+          @include display-flex;
+          justify-content: center;
+        }
+
+        &__hide {
+          display: -webkit-box;
+          -webkit-line-clamp: 12;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+      }
+
+      .checkShow {
+        @include display-flex;
+        justify-content: center;
+        margin-top: 25px;
+
+        button {
+          padding: 5px;
+          width: 350px;
+          height: auto;
+          border-radius: 20px;
+          color: $clorOne;
+          background-color: $clorTwo;
+
+          span,
+          svg {
+            color: $clorOne;
+          }
+
+          &:hover {
+            background-color: white !important;
+            border-color: $clorTwo !important;
+
+            span,
+            svg {
+              color: $clorTwoHover;
+            }
+          }
+        }
+      }
+    }
+
+    &__title {
+      border: 2px solid #ffab3d50;
+      border-radius: 25px;
+      padding: 20px;
+
+      >div:first-child {
+        @include display-flex;
+      }
+
+      &--info {
+        flex: 1;
+        @include display-flex;
+
+        div {
+          flex: 1;
+        }
+
+        .ant-space {
+          white-space: nowrap;
+
+          strong,
+          p,
+          span {
+            padding: 15px 0;
+
+            @media (max-width: $mobile-width) {
+              padding: 7px 0;
+            }
+          }
+
+          span {
+            display: inline;
+          }
+        }
+      }
+
+      button {
+        margin-right: 20px;
+
+        &:hover {
+          border-color: $clorTwoHover !important;
+
+          span {
+            color: $clorTwoHover;
+          }
+        }
+
+        @media (max-width: $mobile-width) {
+          display: none;
+        }
+      }
+
+      //Swiper
+
+      .swiper {
+        border-top: 1px solid #ffab3d50 !important;
+        padding-top: 25px;
+
+        img {
+          width: 100%;
+          aspect-ratio: 1/1;
+          object-fit: cover;
+        }
+
+        // @media (max-width: $mobile-width) {
+        //   height: 100px;
+        // }
+      }
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        background-color: #ffab3ddd;
+        // opacity: 0.9;
+        color: white;
+        padding: 40px 25px;
+        border-radius: 10px;
+
+        @media (max-width: $mobile-width) {
+          padding: 30px 20px;
+          border-radius: 5px;
+        }
+      }
+
+      .swiper-button-prev {
+        left: -10px;
+        /* Khoảng cách từ bên trái */
+      }
+
+      .swiper-button-next {
+        right: -10px;
+        /* Khoảng cách từ bên phải */
+      }
+
+      .swiper-pagination {
+        .swiper-pagination-bullet-active {
+          background-color: $clorTwoHover !important;
+        }
+      }
+
+      //END Swiper
+    }
+  }
+
+  &__right {
+    position: sticky;
+    max-height: 78vh;
+    top: 100px;
+    width: 30%;
+
+    @media (max-width: $desktop-width) {
+      position: relative;
+      width: 100%;
+      height: auto;
+      top: 0;
+      margin: 25px 0;
+    }
+
+    span,
+    p,
+    em {
+      color: $clorOne;
+    }
+
+    button:hover {
+      background-color: white;
+      border-color: $clorTwoHover !important;
+
+      span,
+      p,
+      em {
+        color: $clorTwoHover;
+      }
+    }
+
+    &--variant {
+      button {
+        width: 100%;
+        height: auto;
+      }
+
+      .variant {
+        &__color {
+          button {
+            height: 70px;
+          }
+
+          img {
+            width: 50px;
+            height: 50px;
+            /* Đặt vị trí tuyệt đối */
+            position: absolute;
+            /* Căn giữa theo chiều dọc */
+            top: 50%;
+            /* Căn giữa chính xác */
+            transform: translateY(-50%);
+            left: 2px;
+          }
+
+          &--text {
+            text-align: left;
+            padding-left: 15px;
+
+            p {
+              font-size: calc(8px + 1vmin);
+            }
+
+            span {
+              opacity: 0.8;
+              font-size: calc(7px + 1vmin);
+            }
+          }
+
+        }
+      }
+    }
+
+    &--btn {
+      width: 100%;
+      @include display-flex;
+      justify-content: center;
+
+      button {
+        background-color: $clorTwo;
+        height: 50px;
+        border-radius: 25px;
+        padding: 10px 20px;
+
+        span {
+          color: $clorOne;
+        }
+
+        &:hover {
+          background-color: white;
+          border-color: $clorTwoHover !important;
+
+          span {
+            color: $clorTwoHover;
+          }
+        }
+      }
+    }
+  }
+}

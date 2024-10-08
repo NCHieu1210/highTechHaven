@@ -1,0 +1,108 @@
+@import "../../baseSCSS/variable";
+
+.userListPructsLayout {
+  animation: fadeInUp;
+  /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 0.7s;
+
+  h1 {
+    color: $clorTwo !important;
+    font-size: calc(30px + 1vmin);
+  }
+
+  h2 {
+    color: $clorTwoHover !important;
+    font-size: calc(15px + 1vmin);
+
+    svg {
+      font-size: calc(15px + 1vmin);
+    }
+  }
+
+  .btn__filter {
+    background-color: $clorTwo;
+    color: $clorOne;
+    border-color: $clorTwo;
+    width: 100px;
+    border-radius: 5px !important;
+
+    &:focus-visible {
+      outline: none !important;
+    }
+
+    &:active,
+    &:hover {
+      background-color: white !important;
+      border-color: $clorTwoHover !important;
+      color: $clorTwoHover !important;
+    }
+  }
+
+  &__title {
+    position: sticky;
+    top: 64px;
+    width: 100%;
+    background-color: white;
+    z-index: 99;
+    padding-top: 20px;
+
+    >div:first-child {
+      @include display-flex();
+      justify-content: space-between;
+
+      h1 {
+        flex: 1;
+      }
+    }
+
+    p {
+      font-size: calc(30px + 1vmin);
+      display: inline;
+    }
+
+    @media (max-width: $desktop-width) {
+      padding-top: 10px;
+      margin-left: -10px;
+      margin-right: -10px;
+      width: calc(100% + 20px) !important;
+      padding-left: 10px;
+      padding-right: 10px;
+
+      p {
+        display: none;
+      }
+
+      h1 {
+        color: $clorTwo !important;
+        font-size: calc(25px + 1vmin);
+      }
+    }
+  }
+
+  .layout {
+    @include display-flex();
+    justify-content: space-between;
+    width: 100%;
+    min-height: 70vh;
+    background-color: white;
+
+    &__filter {
+      width: 18%;
+    }
+
+    &__sidebar {
+      position: sticky;
+      top: 180px;
+      max-height: 77vh;
+    }
+
+    &__content {
+      width: 78%;
+
+      @media (max-width: $desktop-width) {
+        width: 100%;
+      }
+    }
+  }
+
+}

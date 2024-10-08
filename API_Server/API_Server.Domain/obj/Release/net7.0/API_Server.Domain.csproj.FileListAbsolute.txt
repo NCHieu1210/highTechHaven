@@ -1,0 +1,11 @@
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Domain\bin\Release\net7.0\API_Server.Domain.deps.json
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Domain\bin\Release\net7.0\API_Server.Domain.dll
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Domain\bin\Release\net7.0\API_Server.Domain.pdb
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Domain\obj\Release\net7.0\API_Server.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Domain\obj\Release\net7.0\API_Server.Domain.AssemblyInfoInputs.cache
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Domain\obj\Release\net7.0\API_Server.Domain.AssemblyInfo.cs
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Domain\obj\Release\net7.0\API_Server.Domain.csproj.CoreCompileInputs.cache
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Domain\obj\Release\net7.0\API_Server.Domain.dll
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Domain\obj\Release\net7.0\refint\API_Server.Domain.dll
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Domain\obj\Release\net7.0\API_Server.Domain.pdb
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Domain\obj\Release\net7.0\ref\API_Server.Domain.dll

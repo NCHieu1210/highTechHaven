@@ -1,0 +1,31 @@
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Infastructure\bin\Debug\net7.0\API_Server.Infastructure.deps.json
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Infastructure\bin\Debug\net7.0\API_Server.Infastructure.dll
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Infastructure\bin\Debug\net7.0\API_Server.Infastructure.pdb
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Infastructure\bin\Debug\net7.0\API_Server.Domain.dll
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Infastructure\bin\Debug\net7.0\API_Server.Domain.pdb
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Infastructure\obj\Debug\net7.0\API_Server.Infastructure.csproj.AssemblyReference.cache
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Infastructure\obj\Debug\net7.0\API_Server.Infastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Infastructure\obj\Debug\net7.0\API_Server.Infastructure.AssemblyInfoInputs.cache
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Infastructure\obj\Debug\net7.0\API_Server.Infastructure.AssemblyInfo.cs
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Infastructure\obj\Debug\net7.0\API_Server.Infastructure.csproj.CoreCompileInputs.cache
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Infastructure\obj\Debug\net7.0\API_Server.Infastructure.sourcelink.json
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Infastructure\obj\Debug\net7.0\API_Serv.028E3551.Up2Date
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Infastructure\obj\Debug\net7.0\API_Server.Infastructure.dll
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Infastructure\obj\Debug\net7.0\refint\API_Server.Infastructure.dll
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Infastructure\obj\Debug\net7.0\API_Server.Infastructure.pdb
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Infastructure\obj\Debug\net7.0\ref\API_Server.Infastructure.dll
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Infastructure\bin\Debug\net7.0\API_Server.Infastructure.deps.json
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Infastructure\bin\Debug\net7.0\API_Server.Infastructure.dll
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Infastructure\bin\Debug\net7.0\API_Server.Infastructure.pdb
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Infastructure\bin\Debug\net7.0\API_Server.Domain.dll
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Infastructure\bin\Debug\net7.0\API_Server.Domain.pdb
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Infastructure\obj\Debug\net7.0\API_Server.Infastructure.csproj.AssemblyReference.cache
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Infastructure\obj\Debug\net7.0\API_Server.Infastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Infastructure\obj\Debug\net7.0\API_Server.Infastructure.AssemblyInfoInputs.cache
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Infastructure\obj\Debug\net7.0\API_Server.Infastructure.AssemblyInfo.cs
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Infastructure\obj\Debug\net7.0\API_Server.Infastructure.csproj.CoreCompileInputs.cache
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Infastructure\obj\Debug\net7.0\API_Serv.028E3551.Up2Date
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Infastructure\obj\Debug\net7.0\API_Server.Infastructure.dll
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Infastructure\obj\Debug\net7.0\refint\API_Server.Infastructure.dll
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Infastructure\obj\Debug\net7.0\API_Server.Infastructure.pdb
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Infastructure\obj\Debug\net7.0\ref\API_Server.Infastructure.dll

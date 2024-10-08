@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import "./variable";
+
+
+* {
+  box-sizing: border-box;
+  font-size: calc(10px + 1vmin);
+  font-family: "Roboto", sans-serif;
+  // font-family: $font;
+  padding: 0;
+  margin: 0;
+  // font-family: $font;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Tùy chỉnh màu chữ cho thông báo thành công================================================= */
+.ant-message-custom-content.ant-message-success {
+  span {
+    color: green !important;
+  }
+}
+
+/* END Tùy chỉnh màu chữ cho thông báo thành công */
+
+
+/* Tùy chỉnh màu chữ cho thông báo lỗi */
+.ant-message-custom-content.ant-message-error {
+  span {
+    color: red !important;
+  }
+}
+
+/*END Tùy chỉnh màu chữ cho thông báo lỗi */
+
+//ant-tag
+.ant-tag {
+  font-size: calc(7px + 1vmin) !important;
+}
+
+//END ant-tag
+
+//Model
+
+.ant-modal-content {
+
+  .ant-modal-title {
+    color: $clorTwoHover;
+    font-size: calc(15px + 1vmin);
+  }
+
+  .ant-form-item-explain-error {
+    font-size: 17px !important;
+  }
+}
+
+//END Model
+
+.ant-form-item-control-input-content {
+
+  .ant-select span {
+    font-size: calc(7px + 1vmin) !important;
+
+  }
+}
+
+// Popconfirm
+.ant-popconfirm-buttons {
+  button {
+    height: 40px;
+    padding: 0 20px;
+  }
+}
+
+//END Popconfirm
+
+//Drawer
+.ant-drawer-title {
+  color: $clorTwoHover !important;
+}
+
+//END Drawer
+
+//Spin
+.ant-spin-dot-item {
+  background-color: $clorTwoHover !important;
+}
+
+//END Spin
+
+//Pagination
+.ant-pagination-item-active {
+  a {
+    color: $clorTwoHover !important;
+  }
+
+  border-color:$clorTwoHover !important;
+}
+
+//END Pagination
+
+
+
+//Button in Image.PreviewGroup
+.ant-image-preview-switch-left,
+.ant-image-preview-switch-right {
+  width: 77px !important;
+  height: 77px !important;
+  // background-color: $clorTwoHover;
+
+  span svg {
+    color: $clorTwo;
+    font-size: calc(25px + 1vmin) !important;
+  }
+}
+
+.ant-image-preview-operations,
+.ant-image-preview-progress {
+  color: $clorTwo;
+
+}
+
+.ant-image-preview-img {
+  transform: scale(1.2) !important;
+}
+
+.btn__two {
+  color: $clorOne !important;
+  background-color: $clorTwo;
+
+  &:hover {
+    border-color: $clorTwoHover !important;
+    background-color: white !important;
+
+    svg,
+    span {
+      color: $clorTwoHover !important;
+    }
+  }
+}
+
+
+.ant-result {
+  padding: 0;
+  padding: 20px 0;
+}

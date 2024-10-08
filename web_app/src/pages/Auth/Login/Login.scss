@@ -1,0 +1,325 @@
+@import "../../../baseSCSS/variable";
+
+
+.login {
+
+  /* don't forget to set a duration! */
+  h1 {
+    color: $clorOne;
+    margin-top: 50px;
+    font-size: calc(30px + 1vmin);
+
+    @media (max-width: $desktop-width) {
+      margin-top: 20px;
+    }
+
+    @media (max-width: $mobile-width) {
+      margin-top: 15px;
+    }
+  }
+
+  h2 {
+    color: $clorTwo;
+    font-size: calc(12px + 1vmin);
+  }
+
+  hr {
+    background-color: $clorTwo;
+    width: 100%;
+    border: none;
+    height: 1px;
+  }
+
+  &__container {
+    &--hrBT {
+      width: 25%;
+
+      @media (max-width: $mobile-width) {
+        display: none;
+      }
+    }
+
+    &--grButton {
+      @include display-flex;
+      justify-content: space-between;
+
+      a {
+        opacity: 0.8;
+        white-space: nowrap;
+      }
+
+      @media (max-width: $mobile-width) {
+        .grButton_button {
+          width: 50%;
+
+          button {
+            width: 100%;
+          }
+        }
+      }
+
+      hr {
+        flex: 1;
+        border: none;
+        height: 1px dashed;
+        padding: 0 10px;
+        opacity: 0.2;
+        background-color: $clorOne;
+        transform: translateY(17px);
+      }
+    }
+
+    &--form {
+      height: 100%;
+      width: 100%;
+      align-items: center;
+
+      animation: bounceInLeft;
+      /* referring directly to the animation's @keyframe declaration */
+      animation-duration: 1s;
+
+      img {
+        width: 150px;
+        opacity: 0.9;
+        height: auto;
+        // border-radius: 20px 20px 0 0;
+        // transform: translateX(20%); //translateY(10%)
+        transform: translateY(5%) translateX(170%);
+        z-index: -9999;
+
+        @media screen and (max-width: 1200px) {
+          display: none;
+        }
+      }
+    }
+
+    &--singUpNow {
+      width: 100%;
+      animation: bounceInRight;
+      /* referring directly to the animation's @keyframe declaration */
+      animation-duration: 1s;
+
+      @media screen and (max-width: 1200px) {
+        margin-top: 50px;
+      }
+
+      button {
+        width: 50%;
+        height: 40px;
+        background-color: $clorTwo;
+        transition: 0.7s;
+        border-radius: 25px;
+
+        span {
+          color: $clorOne !important;
+        }
+
+        &:hover {
+          transition: 0.7s;
+          border-color: $clorTwoHover !important;
+
+          span {
+            color: $clorTwoHover !important;
+          }
+        }
+
+      }
+    }
+
+    &--singUpNow {
+      box-shadow: 0 0 20px rgba(0, 0, 0, .12);
+      background-color: #F5F5F5;
+      border-radius: 20px;
+
+
+      .ant-card-body {
+        background-color: #F5F5F5;
+        border-radius: 20px;
+
+        p {
+          opacity: 0.8;
+          line-height: 250%;
+          font-size: calc(8px + 1vmin);
+        }
+
+        span {
+          padding-right: 10px;
+          color: $clorTwo;
+          transform: translateY(12%);
+        }
+      }
+
+    }
+
+
+    &--or {
+      @include display-flex;
+      width: 100%;
+
+      p {
+        padding: 0 20px;
+        white-space: nowrap;
+        opacity: 0.7;
+      }
+
+      hr {
+        width: 100%;
+        border: none;
+        height: 1px;
+        transform: translateY(12px);
+      }
+    }
+
+    // SCSS cho Ant design
+    // 10%
+    .ant-form {
+      bottom: 0;
+      position: absolute;
+      width: 100%;
+
+      @media screen and (max-width: 1200px) {
+        margin-top: 20px;
+        top: 0;
+        position: relative;
+        width: 100%;
+      }
+    }
+
+    .ant-card {
+      border-radius: 20px;
+    }
+
+    .login-form-button {
+      background-color: $clorTwo;
+      color: $clorOne;
+    }
+
+    .ant-form-item-explain-error {
+      font-size: calc(5px + 1vmin);
+    }
+
+    .login-form-button {
+      border-radius: 25px;
+      width: auto;
+      padding: 0 100px;
+      height: 40px;
+      transition: 0.7s;
+
+
+      span {
+        color: $clorOne !important;
+        padding-left: 10px;
+      }
+    }
+
+    .login-form-forgot {
+      font-size: calc(7px + 1vmin);
+    }
+
+    .ant-btn-default:hover {
+      border-color: $clorTwoHover !important;
+      color: $clorTwoHover !important;
+      transition: 0.7s;
+
+      span {
+        color: $clorTwoHover !important;
+      }
+    }
+
+    .ant-input {
+      height: 40px;
+    }
+
+    .login-form-forgot:hover {
+      border-color: white !important;
+    }
+
+    // END SCSS cho Ant design
+
+
+  }
+
+  &__google {
+    @include display-flex();
+    justify-content: center;
+    width: 100%;
+    transition: 0.7s;
+
+    animation: bounceInUp;
+    /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 1s;
+
+    &--button:active {
+      border-color: $clorTwo !important;
+      color: $clorTwo !important;
+    }
+
+    &--button:hover {
+      border-color: $clorTwo !important;
+      color: $clorTwo !important;
+      transition: 0.7s;
+    }
+
+    &--button {
+      width: 500px;
+      height: 50px;
+      border-radius: 25px;
+      color: $clorOne;
+
+      img {
+        width: 25px;
+        height: auto;
+        transform: translateY(3px);
+      }
+
+      span {
+        padding-left: 5px;
+        font-weight: 500;
+        font-size: calc(12px + 1vmin);
+      }
+    }
+  }
+}
+
+.forgot {
+  color: $clorOne;
+  border-color: white !important;
+  height: 40px;
+  transition: 0.7s;
+
+  &:hover {
+    border-color: white !important;
+    border-radius: 25px;
+    transition: 0.7s;
+  }
+
+  &__form {
+    label {
+      font-size: calc(9px + 1vmin) !important;
+    }
+
+    &--button {
+      text-align: center;
+
+      button {
+        border-radius: 25px;
+        padding: 0 50px;
+        background-color: $clorTwo;
+        color: $clorOne;
+        transition: 0.7s;
+
+
+        &:hover {
+          background-color: white !important;
+          border-color: $clorTwoHover;
+          transition: 0.7s;
+
+          span {
+            color: $clorTwoHover;
+          }
+        }
+      }
+    }
+  }
+
+}

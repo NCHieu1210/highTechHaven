@@ -1,0 +1,712 @@
+@import "../../baseSCSS/variable";
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Playpen+Sans:wght@100..800&display=swap');
+
+.userlayout {
+  min-height: 100vh;
+
+  @media (max-width: $desktop-width) {
+    .header__setHide {
+      display: none;
+    }
+  }
+
+  //Header
+  &__header {
+    background-color: $clorOne;
+    padding: $paddingDeafault;
+
+    @media(max-width: $desktop-width) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    //Header top
+    &--top {
+      width: 100%;
+      height: 100%;
+      padding-top: 25px;
+      padding-bottom: 30px;
+
+      @media (max-width: $desktop-width) {
+        padding-bottom: 15px;
+      }
+
+    }
+
+    .header {
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+
+      a {
+        text-decoration: none;
+        color: $clorTwo;
+      }
+
+      //Logo
+      &__logo {
+        @include display-flex();
+        justify-content: start;
+        align-items: center;
+
+        img {
+          width: 50px;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          margin-right: 10px;
+
+          @media (max-width: $mobile-width) {
+            width: 35px;
+          }
+        }
+
+        h2 {
+          font-size: calc(25px + 1vh);
+          font-family: "Playpen Sans", cursive;
+          font-optical-sizing: auto;
+          font-weight: 700;
+          font-style: normal;
+        }
+      }
+
+      //END Logo
+
+      //SearchBar
+      &__searchBar {
+        width: 750px;
+
+        @media (max-width: 1600px) {
+          width: 600px;
+        }
+
+        @media (max-width: 1400px) {
+          width: 500px;
+        }
+
+        @media (max-width: 1250px) {
+          width: 400px;
+        }
+
+        @media (max-width: 1150px) {
+          width: 350px;
+        }
+
+        @media (max-width: $desktop-width) {
+          width: 550px;
+        }
+
+        @media (max-width: 800px) {
+          width: 500px;
+        }
+
+        @media (max-width: $tablet-width) {
+          width: 250px;
+        }
+
+        @media (max-width: $mobile-width) {
+          width: 250px;
+        }
+
+        form {
+          justify-content: center;
+          width: 100%;
+
+          input {
+            height: 50px;
+            padding: 0 25px;
+            border-radius: 50px;
+            transform: translateX(10px);
+            font-size: calc(7px + 1vh);
+
+            @media (max-width: $mobile-width) {
+              height: 35px;
+              font-size: calc(5px + 1vh);
+              padding: 0 10px;
+              transform: translateX(7px);
+            }
+          }
+
+          button {
+            height: 50px;
+            background-color: $clorTwo;
+            border-color: $clorTwo;
+            border-radius: 50px !important;
+            z-index: 99;
+            padding: 0 25px;
+            transform: translateX(-10px);
+
+            @media (max-width: $mobile-width) {
+              height: 35px;
+              width: 35px;
+              transform: translateX(-7px);
+            }
+
+            div,
+            span {
+              color: $clorOne;
+            }
+
+            &:hover {
+              background-color: $clorTwoHover !important;
+
+              span {
+                color: $clorOne;
+              }
+            }
+          }
+
+          .ant-space-compact {
+            width: 100%;
+          }
+
+          .ant-form-item {
+            margin-bottom: 0 !important;
+
+            &:first-child {
+              flex: 1;
+            }
+          }
+        }
+      }
+
+      //END SearchBar
+
+      //Phone
+      &__phone {
+        @include display-flex();
+        justify-content: end;
+
+        div:first-child {
+          margin-right: 15px;
+
+          @media(max-width: $mobile-width) {
+            margin-right: 0;
+          }
+        }
+
+        button {
+          height: auto !important;
+          @include display-flex;
+          align-items: center;
+          justify-items: center;
+          background-color: $clorTwo;
+          border-color: $clorTwo;
+          color: $clorOne !important;
+
+          @media(max-width: $mobile-width) {
+            width: 65px;
+            height: 35px !important;
+            line-height: 1.0;
+
+            strong,
+            span,
+            p {
+              font-size: calc(5px + 1vmin);
+              padding: 0 !important;
+              margin-left: -5px !important;
+            }
+          }
+
+          div {
+            margin-top: auto;
+            margin-bottom: auto;
+          }
+
+          &:hover {
+            background-color: $clorTwoHover !important;
+            border-color: $clorOne !important;
+
+            span {
+              color: $clorOne;
+            }
+
+            strong,
+            p {
+              color: $clorOne;
+            }
+          }
+        }
+      }
+
+      //END phone
+
+    }
+
+    //END header top
+
+    &--bottom {
+      height: 100%;
+      @include display-flex();
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+
+      .bottom {
+
+        //Danh mục sản phẩm
+        &__categories {
+
+          button {
+            background-color: $clorTwo;
+            border-color: $clorTwo;
+            border-radius: 50px;
+            height: 50px;
+
+            @media(max-width: $mobile-width) {
+              height: 35px;
+            }
+
+            div {
+              padding: 0 30px;
+
+              @media(max-width: $mobile-width) {
+                padding: 0;
+                width: 77px;
+              }
+            }
+
+            .categories__text {
+              padding-left: 15px;
+
+              @media(max-width: $mobile-width) {
+                padding-left: 5px;
+              }
+            }
+
+            &:hover {
+              background-color: $clorTwo !important;
+              border-color: $clorTwo !important;
+              color: $clorOne !important;
+
+              span {
+                color: $clorOne !important;
+              }
+            }
+
+          }
+        }
+
+        //END danh mục sản phẩm
+
+
+        //Bài viết
+        &__posts {
+          button {
+            width: 150px;
+            height: 50px;
+            background-color: $clorOne !important;
+            border-color: $clorOne !important;
+            transition: 0.7s;
+          }
+
+          span {
+            color: $clorTwo !important;
+            font-weight: 500;
+
+          }
+
+          &:hover {
+            button {
+              background-color: $clorTwo !important;
+              border-radius: 50px;
+              transition: 0.7s;
+              width: 200px;
+            }
+
+            span {
+              color: $clorOne !important;
+            }
+          }
+
+          @media(max-width: $mobile-width) {
+            button {
+              height: 35px;
+              width: 77px;
+
+              &:hover {
+                background-color: $clorOne !important;
+                width: 77px;
+
+                span {
+                  color: $clorTwo !important;
+                  font-weight: 500;
+
+                }
+              }
+            }
+          }
+        }
+
+        //END Bài viết
+
+
+        //Blcok User
+        &__blockUser {
+          @include display-flex();
+          align-items: center;
+
+          a {
+            display: inline-flex;
+            margin-left: 30px;
+
+            @media (max-width: $mobile-width) {
+              margin-left: 15px;
+            }
+          }
+
+          sup span {
+            color: white !important;
+          }
+
+          span {
+            color: $clorTwo;
+            // padding-left: 20px;
+
+            svg {
+              font-size: calc(20px + 1vmin) !important;
+            }
+
+            &:hover {
+              color: $clorTwoHover;
+            }
+          }
+
+          img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid $clorTwo;
+          }
+        }
+
+        //End Block User
+      }
+    }
+  }
+
+  //END header
+
+
+  &__content {
+    background-color: white;
+    padding: $paddingDeafault;
+    padding-top: 22px;
+    padding-bottom: 25px;
+
+    @media(max-width: $desktop-width) {
+      padding: 10px;
+      padding-bottom: 20px;
+    }
+  }
+
+  .ant-float-btn-body {
+    background-color: $clorTwo !important;
+
+    span {
+      color: white;
+    }
+
+    &:hover {
+      background-color: white !important;
+
+      span {
+        color: $clorTwoHover;
+      }
+    }
+
+  }
+
+  &__footer {
+    @include display-flex();
+    justify-content: space-between;
+    padding: $paddingDeafault;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    // background-color: $clorOne;
+    animation: backInUp;
+    /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 1s;
+    /* don't forget to set a duration! */
+
+    @media(max-width: $desktop-width) {
+      padding-left: 10px;
+      padding-right: 10px;
+      flex-direction: column;
+
+      >div:first-child {
+        order: 2;
+      }
+    }
+
+    h2 {
+      color: $clorTwoHover;
+      font-size: calc(12px + 1vmin);
+    }
+
+    span {
+      font-size: calc(7px + 1vmin);
+    }
+
+    a {
+      color: $clorOne;
+
+      &:hover {
+        font-weight: 500;
+        color: $clorTwoHover;
+      }
+    }
+
+    &--copyright em {
+      font-size: calc(7px + 1vmin) !important;
+    }
+
+    &>div {
+
+      &:first-child {
+        width: 20%;
+      }
+
+      &:nth-child(2) {
+        width: 25%;
+        padding-left: 25px;
+      }
+
+      &:nth-child(3) {
+        width: 35%;
+        padding-left: 15px;
+      }
+
+      &:last-child {
+        width: 20%;
+        padding-left: 25px;
+      }
+
+      @media (max-width: $desktop-width) {
+        width: 100% !important;
+        text-align: center;
+        padding: 0 !important;
+
+        h2 {
+          font-size: calc(20px + 1vmin) !important;
+
+        }
+
+        span {
+          font-size: calc(15px + 1vmin) !important;
+        }
+      }
+    }
+
+    .ant-col {
+      margin-bottom: 20px;
+    }
+
+    &--supplier>a {
+      @include display-flex();
+      align-items: center;
+
+      img {
+        width: 30px;
+        aspect-ratio: 1/1;
+        object-fit: contain;
+      }
+
+      span {
+        padding-left: 10px;
+
+      }
+    }
+
+    &--social {
+      img {
+        width: 50px;
+        aspect-ratio: 1/1;
+        object-fit: contain;
+        border-radius: 50%;
+      }
+    }
+
+    &--commitment {
+      img {
+        width: 200px;
+        height: auto;
+      }
+
+      a img {
+        width: 100px;
+        height: auto;
+      }
+
+      .ant-space {
+        width: 100%;
+
+        .ant-space-item {
+          width: 100%;
+        }
+      }
+    }
+
+    &--introduce {
+      background-color: $clorOne;
+      color: white;
+      height: 77px;
+      animation: backInUp;
+      /* referring directly to the animation's @keyframe declaration */
+      animation-duration: 1s;
+
+      /* don't forget to set a duration! */
+      @media(max-width: $desktop-width) {
+        padding-right: 20px;
+        flex-direction: column;
+        height: 100px;
+      }
+
+      &>div {
+        height: 100%;
+        @include display-flex();
+        justify-content: center;
+        align-items: center;
+      }
+
+      span,
+      svg {
+        font-size: calc(18px + 1vmin);
+        font-weight: 500;
+
+        @media(max-width: $mobile-width) {
+          font-size: calc(12px + 1vmin);
+
+        }
+      }
+    }
+  }
+}
+
+//Ant Design
+.ant-layout-footer {
+  background-color: white;
+  padding-top: 25px;
+
+  .ant-spin-nested-loading {
+    margin-left: -50px;
+    margin-right: -50px;
+  }
+}
+
+// .ant-dropdown-menu.ant-dropdown-menu-root.ant-dropdown-menu-vertical.ant-dropdown-menu-light.css-dev-only-do-not-override-j9bb5n {
+//   margin-top: 5px;
+// }
+
+// .ant-dropdown-menu.ant-dropdown-menu-root.ant-dropdown-menu-vertical.ant-dropdown-menu-light.css-dev-only-do-not-override-j9bb5n {
+//   margin-top: 17px;
+// }
+.dropdown-one .ant-dropdown-menu {
+  margin-top: 3px !important;
+}
+
+.dropdown-two .ant-dropdown-menu {
+  margin-top: 13px !important;
+}
+
+
+.notification {
+  width: 30%;
+
+  @media(max-width: $desktop-width) {
+    width: 100%;
+  }
+
+  div {
+    white-space: normal;
+    line-height: 1.2;
+  }
+
+  ul {
+    padding: 0 !important;
+  }
+
+  ul.ant-dropdown-menu-item-group-list {
+    max-height: 70vh;
+    overflow: hidden;
+    overflow-y: auto;
+    margin: 0 !important;
+
+    li {
+      padding: 0 !important;
+    }
+  }
+
+  /* Tùy chỉnh thanh cuộn */
+  ul.ant-dropdown-menu-item-group-list::-webkit-scrollbar {
+    width: 5px;
+    /* Độ rộng thanh cuộn */
+  }
+
+  ul.ant-dropdown-menu-item-group-list::-webkit-scrollbar-thumb {
+    background-color: #888;
+    /* Màu của thanh cuộn */
+    border-radius: 4px;
+    /* Bo tròn góc thanh cuộn */
+  }
+
+  ul.ant-dropdown-menu-item-group-list::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+    /* Màu khi hover */
+  }
+
+  ul.ant-dropdown-menu-item-group-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* Màu nền của thanh cuộn */
+  }
+
+  img {
+    width: 100px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  &__header {
+    width: 100%;
+    justify-content: space-between !important;
+
+    h2 {
+      font-size: calc(18px + 1vmin);
+      color: $clorTwo;
+    }
+
+    button {
+      border-color: white;
+      color: gray;
+
+      &:hover {
+        color: $clorOne !important;
+        border-color: white !important;
+      }
+    }
+  }
+
+  &__lastTime {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    color: gray;
+  }
+
+  &__space {
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 0;
+
+    &--notSeen {
+      background-color: rgba(128, 128, 128, 0.125);
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+}
+
+//END Ant Design

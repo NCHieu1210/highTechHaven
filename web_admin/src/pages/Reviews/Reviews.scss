@@ -1,0 +1,15 @@
+@import "../../baseSCSS/variable";
+
+.review {
+  &__notConfirmed {
+    background-color: $clorThree;
+  }
+
+  &__tag {
+    width: 130px;
+  }
+
+  &__func {
+    text-align: right;
+  }
+}

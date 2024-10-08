@@ -1,0 +1,146 @@
+@import "../../baseSCSS/variable";
+
+.reviews {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  border-radius: 20px;
+
+  &__rating {
+    @include display-flex();
+    justify-content: space-between;
+
+    @media (max-width: $mobile-width) {
+      flex-direction: column;
+    }
+
+    &--left {
+      @include display-flex();
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 40%;
+      border: 20px;
+      border-right: 1px solid $clorTwo;
+
+      @media (max-width: $mobile-width) {
+        width: 100%;
+        border-right: none;
+        padding-bottom: 10px;
+      }
+    }
+
+    &--right {
+      width: 60%;
+
+      &>div {
+        @include display-flex();
+        // justify-content: space-between;
+        align-items: center;
+        justify-content: end;
+
+        &>div {
+          padding: 0 20px;
+        }
+      }
+
+      @media (max-width: $mobile-width) {
+        width: 100%;
+        padding-top: 10px;
+        white-space: nowrap;
+
+        &>div>div {
+          padding: 0 5px;
+
+        }
+      }
+
+    }
+  }
+
+  &__add {
+    @include display-flex();
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid $clorTwo;
+    margin: 30px 0;
+
+    button {
+      width: 100%;
+      background-color: $clorTwo;
+      height: 50px;
+      border-radius: 25px;
+
+      span {
+        color: $clorOne;
+      }
+
+      &:hover {
+        background-color: white;
+        border-color: $clorTwoHover !important;
+
+        span {
+          color: $clorTwoHover;
+        }
+      }
+    }
+
+  }
+
+  &__list {
+    em {
+      color: gray;
+      font-size: calc(7px + 1vmin);
+      font-weight: 300;
+    }
+  }
+
+  &__Form {
+    &--rating {
+      &>div:first-child {
+        width: 100%;
+        text-align: center;
+
+        h2 {
+          padding-bottom: 15px
+        }
+      }
+
+      &>div {
+        @include display-flex();
+        justify-content: center;
+      }
+
+      ul {
+        li {
+          padding: 0 15px;
+        }
+      }
+
+      .ant-rate-star-second {
+        svg {
+          font-size: calc(25px + 1vmin);
+        }
+      }
+    }
+
+    &--btn {
+      button {
+        background-color: $clorTwo;
+        color: $clorOne;
+        height: 40px;
+        width: 150px;
+
+        &:hover {
+          background-color: white !important;
+          border-color: $clorTwoHover !important;
+
+          span {
+            color: $clorTwoHover;
+          }
+        }
+      }
+
+    }
+  }
+}

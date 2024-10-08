@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree&display=swap");
+$font: "figtree";
+//Màu
+$clorOne : #2a3746;
+$clorTwo : #FFAA3D;
+$clorOneOpacity : #2a3746d2;
+$clorTwoHover: #f88d00;
+//END màu
+$dange: #FF7875;
+$success: #2DC78B;
+//End Màu
+$mobile-width: 480px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+//Button
+$heightButton: 40px;
+$paddingButton:0 20px;
+//End Button
+$paddingDeafault: 0 12%;
+$marginDeafault: 25px 0 45px 0;
+
+@mixin display-flex () {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin CImgBground() {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}

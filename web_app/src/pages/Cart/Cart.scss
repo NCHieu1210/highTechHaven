@@ -1,0 +1,334 @@
+@import "../../baseSCSS/variable";
+
+.cart {
+  animation: fadeInUp;
+  /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 0.7s;
+
+  min-height: 52vh;
+
+  .btn__two {
+    padding: 17px 50px;
+  }
+
+  @include display-flex;
+  justify-content: space-between;
+
+  @media (max-width: $desktop-width) {
+    flex-direction: column;
+  }
+
+  &__title {
+    h1 {
+      color: $clorTwoHover;
+      font-size: calc(30px + 1vmin);
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: $clorTwoHover;
+      font-size: calc(15px + 1vmin);
+      margin-bottom: 10px;
+    }
+
+    &--text {
+      @include display-flex;
+      justify-content: space-between;
+      align-items: start;
+
+      button {
+        background-color: $clorTwo;
+        border-radius: 20px;
+        width: 100%;
+        height: 40px;
+        padding: 0 20px;
+        font-size: calc(10px + 1vmin);
+
+        &:hover {
+          background-color: white;
+          border-color: $clorTwoHover !important;
+
+          span {
+            color: $clorTwoHover !important;
+          }
+        }
+      }
+
+      @media (max-width: $mobile-width) {
+        h1 {
+          font-size: calc(20px + 1vmin);
+        }
+      }
+    }
+  }
+
+
+
+  .ant-list-item-meta-title {
+    a:hover {
+      color: $clorTwoHover !important;
+    }
+  }
+
+  .ant-image-mask,
+  img {
+    border-radius: 10px;
+  }
+
+  .ant-list.ant-list-split {
+    width: 70%;
+
+    @media (max-width: $desktop-width) {
+      width: 100%;
+
+    }
+  }
+
+  //Khối bên trái
+
+  &__contains {
+    @include display-flex;
+    justify-content: space-between;
+    height: 100%;
+
+    @media (max-width: $mobile-width) {
+      flex-direction: column;
+    }
+
+    // Khối chức năng
+    &--func {
+      @include display-flex;
+      justify-items: center;
+      align-items: center;
+
+      p {
+        padding: 0 20px;
+      }
+
+      strong {
+        color: $clorTwoHover;
+        font-size: calc(15px + 1vmin) !important;
+      }
+
+      button {
+        background-color: $clorTwo;
+        border-radius: 50%;
+        width: 42px;
+        height: 42px;
+        @include display-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+
+        span,
+        svg {
+          padding: 0;
+        }
+
+        &:hover {
+          background-color: white;
+          border-color: $clorTwoHover !important;
+
+          span,
+          svg {
+            color: $clorTwoHover !important;
+          }
+        }
+      }
+
+      @media (max-width: $mobile-width) {
+        margin-top: 15px;
+
+        button {
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+
+    //END Khối chức năng
+  }
+
+  //Ô tổng cộng
+  &__total {
+    .ant-card {
+      position: sticky !important;
+      top: 100px;
+      width: 333px !important;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+      @media (max-width: $desktop-width) {
+        width: 100% !important;
+        margin-top: 20px;
+      }
+    }
+
+    .ant-card-head-title {
+      font-size: calc(15px + 1vmin);
+      color: $clorTwoHover;
+    }
+
+    span {
+      color: rgba(0, 0, 0, 0.45)
+    }
+
+    strong {
+      font-size: calc(12px + 1vmin);
+    }
+
+    .ant-card-body>div {
+      @include display-flex;
+      justify-content: space-between;
+      align-items: end;
+    }
+
+    button {
+      background-color: $clorTwo;
+      border-radius: 20px;
+      width: 100%;
+      height: 40px;
+      @include display-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+
+      span {
+        color: $clorOne;
+      }
+
+      &:hover {
+        background-color: white !important;
+        border-color: $clorTwoHover;
+
+        span {
+          color: $clorTwoHover;
+          ;
+        }
+      }
+    }
+
+  }
+
+  //END Ô tổng cộng
+
+  //FORM Điền thông tin nhận hàng
+  &__address {
+    width: 100%;
+    animation: fadeInUp;
+    /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 1s;
+
+    @media (max-width: $mobile-width) {
+
+      .ant-form-item {
+        margin-bottom: 0;
+
+        button {
+          width: 100%;
+
+          &:first-child {
+            margin-bottom: 20px;
+          }
+        }
+      }
+
+      &--btn {
+        &>div>div {
+          margin: 0;
+        }
+      }
+    }
+
+
+    &>form {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    label {
+      font-size: calc(9px + 1vmin) !important;
+    }
+
+    button {
+      width: 250px;
+      color: $clorOne;
+
+      &:first-child {
+        background-color: white;
+        border-color: $clorOne;
+        margin-right: 20px;
+
+      }
+
+      &:last-child {
+        background-color: $clorTwo;
+
+      }
+
+      &:hover {
+        background-color: white !important;
+        border-color: $clorTwoHover;
+
+        span {
+          color: $clorTwoHover;
+        }
+      }
+    }
+
+    &--radio {
+      label {
+        height: auto;
+        width: 777px;
+
+        &:hover {
+          color: $clorOne;
+        }
+
+        @media (max-width: $mobile-width) {
+          width: 100%;
+        }
+      }
+
+      .ant-radio-button-wrapper-checked {
+        color: $clorTwoHover !important;
+        border-color: $clorTwoHover !important;
+      }
+    }
+
+    .ant-radio-button-wrapper.ant-radio-button-wrapper-in-form-item {
+      &:hover {
+        color: $clorTwoHover;
+      }
+    }
+
+    .ant-radio-button-wrapper.ant-radio-button-wrapper-checked.ant-radio-button-wrapper-in-form-item {
+      border-color: $clorTwoHover !important;
+
+      span {
+        color: $clorTwoHover !important;
+      }
+
+      &::before {
+        background-color: $clorTwoHover !important;
+      }
+
+    }
+
+    .ant-radio-checked>.ant-radio-inner {
+      background-color: $clorTwoHover !important;
+      border-color: $clorTwoHover !important;
+    }
+
+    .ant-radio-inner {
+      &:hover {
+        border-color: $clorTwoHover !important;
+      }
+    }
+  }
+
+  //FORM END Điền thông tin nhận hàng
+
+
+}
+
+//END Khối bên trái

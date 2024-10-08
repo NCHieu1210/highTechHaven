@@ -1,0 +1,64 @@
+@import "../../baseSCSS/variable";
+@import "../../baseSCSS/App";
+
+.admin {
+  .contain__Account {
+    @include display-flex;
+
+
+    img {
+      margin-right: 10px;
+    }
+  }
+
+
+}
+
+.viewOrder {
+  max-height: 80vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Tùy chỉnh thanh cuộn */
+.viewOrder::-webkit-scrollbar {
+  width: 5px;
+  /* Độ rộng thanh cuộn */
+}
+
+.viewOrder::-webkit-scrollbar-thumb {
+  background-color: #888;
+  /* Màu của thanh cuộn */
+  border-radius: 4px;
+  /* Bo tròn góc thanh cuộn */
+}
+
+.viewOrder::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+  /* Màu khi hover */
+}
+
+.viewOrder::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* Màu nền của thanh cuộn */
+}
+
+.adminOrder {
+  em {
+    color: gray;
+  }
+
+  .orders__content {
+    img {
+      width: 300px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    p {
+      white-space: nowrap;
+      width: 170px;
+    }
+  }
+}

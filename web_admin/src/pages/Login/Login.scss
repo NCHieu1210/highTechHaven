@@ -1,0 +1,69 @@
+@import "../../baseSCSS/variable";
+
+.login {
+  height: 100vh;
+  @include display-flex();
+  align-items: center;
+  justify-content: center;
+  background-color: gray;
+
+  h1 {
+    font-size: calc(25px + 1vmin);
+    text-align: center;
+    color: $clorTwoHover;
+  }
+
+  input {
+    width: 350px;
+    height: 35px;
+    font-size: calc(10px + 1vmin) !important;
+  }
+
+  button {
+    padding: 20px 35px;
+    border-color: $clorTwoHover;
+    width: 100%;
+    border-radius: 25px;
+
+    span {
+      color: $clorTwoHover;
+      padding-right: 10px;
+    }
+
+    &:hover {
+      background-color: $clorTwo !important;
+      border-color: $clorTwo !important;
+
+
+      span {
+        color: $clorOne;
+      }
+    }
+  }
+
+  &__container {
+    @include display-flex();
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+    color: $clorTwo;
+    box-shadow: 7px 7px 10px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    padding: 50px;
+    background-color: white;
+  }
+
+  .ant-input-affix-wrapper {
+    &:hover {
+      border-color: $clorTwo;
+    }
+
+    &-focused {
+      border-color: $clorTwoHover;
+
+      svg {
+        color: $clorTwoHover;
+      }
+    }
+  }
+}

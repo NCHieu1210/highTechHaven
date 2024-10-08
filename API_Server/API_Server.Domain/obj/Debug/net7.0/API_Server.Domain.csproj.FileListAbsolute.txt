@@ -1,0 +1,23 @@
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Domain\bin\Debug\net7.0\API_Server.Domain.deps.json
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Domain\bin\Debug\net7.0\API_Server.Domain.dll
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Domain\bin\Debug\net7.0\API_Server.Domain.pdb
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Domain\obj\Debug\net7.0\API_Server.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Domain\obj\Debug\net7.0\API_Server.Domain.AssemblyInfoInputs.cache
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Domain\obj\Debug\net7.0\API_Server.Domain.AssemblyInfo.cs
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Domain\obj\Debug\net7.0\API_Server.Domain.csproj.CoreCompileInputs.cache
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Domain\obj\Debug\net7.0\API_Server.Domain.sourcelink.json
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Domain\obj\Debug\net7.0\API_Server.Domain.dll
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Domain\obj\Debug\net7.0\refint\API_Server.Domain.dll
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Domain\obj\Debug\net7.0\API_Server.Domain.pdb
+D:\Học Tập\CaoThang\Đồ Án Tốt Nghiệp\highTeachHaven\API_Server\API_Server.Domain\obj\Debug\net7.0\ref\API_Server.Domain.dll
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Domain\bin\Debug\net7.0\API_Server.Domain.deps.json
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Domain\bin\Debug\net7.0\API_Server.Domain.dll
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Domain\bin\Debug\net7.0\API_Server.Domain.pdb
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Domain\obj\Debug\net7.0\API_Server.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Domain\obj\Debug\net7.0\API_Server.Domain.AssemblyInfoInputs.cache
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Domain\obj\Debug\net7.0\API_Server.Domain.AssemblyInfo.cs
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Domain\obj\Debug\net7.0\API_Server.Domain.csproj.CoreCompileInputs.cache
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Domain\obj\Debug\net7.0\API_Server.Domain.dll
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Domain\obj\Debug\net7.0\refint\API_Server.Domain.dll
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Domain\obj\Debug\net7.0\API_Server.Domain.pdb
+D:\ProjectForMe\highTeachHaven\API_Server\API_Server.Domain\obj\Debug\net7.0\ref\API_Server.Domain.dll

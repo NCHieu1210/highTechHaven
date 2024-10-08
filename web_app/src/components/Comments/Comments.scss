@@ -1,0 +1,228 @@
+@import "../../baseSCSS/variable";
+
+.comments {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 25px;
+
+  h2 {
+    color: $clorTwoHover;
+    font-size: calc(12px + 1vmin);
+  }
+
+  em {
+    font-size: calc(7px + 1vmin);
+    color: gray;
+  }
+
+  textarea {
+    font-size: calc(10px + 1vmin);
+  }
+
+  &__input .ant-input {
+    &:hover {
+      border-color: $clorTwoHover !important;
+    }
+
+    &:focus {
+      border-color: $clorTwoHover !important;
+    }
+  }
+
+  form button {
+    background-color: $clorTwo;
+    border-radius: 10px;
+    padding: 7px;
+    width: 100px;
+    height: 40px;
+
+    @media (max-width: $mobile-width) {
+      width: 50px;
+      height: 30px;
+      border-radius: 5px;
+
+      span:last-child {
+        display: none;
+      }
+    }
+
+    &:hover {
+      background-color: white;
+      border-color: $clorTwoHover !important;
+
+      span {
+        color: $clorTwoHover;
+      }
+    }
+  }
+
+  .ant-list-item-meta-description {
+    color: $clorOne !important;
+    font-size: calc(10px + 1vmin) !important;
+  }
+
+  &__showMore {
+    @include display-flex();
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    button {
+      background-color: white;
+      border-color: $clorTwoHover;
+      border-radius: 50px;
+      padding: 5px;
+      width: 350px;
+      height: auto;
+
+      span {
+        color: $clorTwoHover;
+      }
+
+      &:hover {
+        background-color: $clorTwo !important;
+        border-color: $clorTwoHover !important;
+
+        span {
+          color: $clorOne;
+        }
+      }
+    }
+  }
+
+
+  &__footer {
+    width: 100%;
+
+    button {
+      border-color: white;
+      padding: 0;
+      margin-left: 15px;
+      box-shadow: none;
+
+      &:hover {
+        border-color: white !important;
+
+        span,
+        svg {
+          color: $clorTwoHover;
+        }
+      }
+
+      span {
+        color: $clorOne;
+        font-size: calc(7px + 1vmin);
+      }
+
+      svg {
+        font-size: calc(7px + 1vmin);
+      }
+    }
+
+    &--like:hover {
+
+      span,
+      svg {
+        color: red !important;
+      }
+    }
+
+    &--quantityLike {
+      color: red;
+      margin-left: 15px;
+      padding-left: 10px;
+      display: inline-block;
+      text-align: end;
+      border-left: 1px solid rgba(128, 128, 128, 0.3);
+    }
+  }
+
+  &__divider {
+    border-color: rgba(128, 128, 128, 0.3) !important;
+    border-left: 1px solid rgba(128, 128, 128, 0.3);
+    margin: 0;
+    margin-bottom: 25px !important;
+    align-items: flex-end !important;
+
+    &--show {
+      align-items: flex-start !important;
+      border-left: 0;
+      margin: 0 !important;
+      align-items: center;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &__list {
+    .ant-list-item-meta-avatar {
+      span {
+        border-color: $clorTwoHover !important;
+      }
+    }
+
+    .subComments {
+      padding-left: 25px;
+
+      .comments__list {
+        border-left: 1px solid rgba(128, 128, 128, 0.3);
+      }
+
+      // .ant-list-item-meta-avatar {
+      //   @include display-flex();
+      //   align-items: center;
+
+      //   &::before {
+      //     width: calc(0.05* 100%);
+      //     height: calc(0.05* 100%);
+      //     position: relative;
+      //     border-block-start: 1px solid transparent;
+      //     border-block-start-color: inherit;
+      //     border-block-end: 0;
+      //     transform: translateY(50%);
+      //     content: '';
+      //   }
+      // }
+
+      &__hide {
+        display: none;
+      }
+
+      &__button {
+        border-color: white;
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+        transform: translateY(50%);
+        transition: 0.5s;
+
+        &--show {
+          transform: translateY(-50%);
+        }
+
+        &:hover {
+          border-color: white !important;
+
+          span,
+          svg {
+            color: $clorTwoHover;
+          }
+        }
+      }
+    }
+
+    .repComments {
+      &__notShow {
+        display: none;
+      }
+    }
+
+    .ant-form-item-control-input-content {
+      padding-left: 25px;
+    }
+  }
+
+}

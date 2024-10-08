@@ -1,0 +1,44 @@
+@import "../../baseSCSS/variable";
+
+.admin {
+
+  &__headerUser {
+    &--active {
+      background-color: $clorOneOpacity;
+
+      span {
+        color: white;
+      }
+    }
+  }
+
+  &__upload {
+
+    .ant-upload-list-item-container {
+      height: 222px !important;
+      width: 222px !important;
+    }
+  }
+
+  &__body--table {
+    animation: bounceInRight;
+    /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 0.7s;
+
+    /* don't forget to set a duration! */
+    img {
+      width: 100px !important;
+      aspect-ratio: 1 / 1 !important;
+      object-fit: cover;
+      border-radius: 50%;
+
+    }
+  }
+
+  &__body--grid {
+    animation: bounceInRight;
+    /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 0.7s;
+    /* don't forget to set a duration! */
+  }
+}

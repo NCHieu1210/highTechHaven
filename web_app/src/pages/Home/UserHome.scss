@@ -1,0 +1,107 @@
+@import "../../baseSCSS/variable";
+
+.home {
+  animation: fadeInUp;
+  /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 0.7s;
+
+  h2 {
+    font-size: calc(15px + 1vmin);
+    color: $clorTwoHover;
+    margin-bottom: 10px;
+  }
+
+  &__section {
+    img {
+      display: block;
+      width: 200px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      background-color: #ffab3ddd;
+      // opacity: 0.9;
+      color: white;
+      padding: 50px 25px;
+      border-radius: 10px;
+      transform: translateY(-55px) scale(0.7);
+
+
+      // @media (max-width: $mobile-width) {
+      //   padding: 30px 20px;
+      //   border-radius: 5px;
+      // }
+    }
+
+    .swiper-button-prev {
+      left: -10px;
+      /* Khoảng cách từ bên trái */
+    }
+
+    .swiper-button-next {
+      right: -10px;
+      /* Khoảng cách từ bên phải */
+    }
+
+    .swiper-pagination {
+      .swiper-pagination-bullet-active {
+        background-color: $clorTwoHover !important;
+      }
+    }
+
+    .navLink {
+      .ant-card-meta-title {
+        height: 35px;
+      }
+
+      &:hover {
+        span {
+          color: $clorTwoHover;
+          font-size: calc(15px + 1vmin);
+          transition: 0.3s;
+        }
+
+        img {
+          transform: scale(1.1);
+          object-fit: cover;
+          transition: 0.3s;
+        }
+      }
+    }
+
+    .ant-card {
+      margin: 15px 0;
+    }
+
+    .ant-card-cover {
+      padding: 15px;
+    }
+
+  }
+
+  &__banner {
+    @include display-flex;
+    justify-content: space-between;
+
+    img {
+      width: 48%;
+      border-radius: 10px;
+    }
+
+    @media (max-width: $mobile-width) {
+      flex-direction: column;
+
+      img {
+        width: 100%;
+        border-radius: 10px;
+
+        &:first-child {
+          margin-bottom: 25px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+@import "../../baseSCSS/variable";
+
+.comments {
+  .ant-tag {
+    width: 100px;
+  }
+
+  &__subComments {
+    padding-left: 50px;
+    border-left: 1px solid $clorThree;
+
+    h2 {
+      color: $clorTwoHover;
+    }
+
+    em {
+      color: gray;
+    }
+
+    &--content {
+      color: $clorOne;
+    }
+
+    &--like {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .ant-list-item-meta-title {
+      width: 33%;
+      white-space: nowrap;
+      position: relative;
+    }
+
+  }
+
+  &__thumbnail {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  &__func {
+
+    button {
+      border-color: $clorThree;
+      background-color: white;
+      color: $clorOne;
+
+
+      &:hover {
+        color: $clorTwoHover !important;
+        border-color: $clorTwoHover !important;
+      }
+    }
+  }
+}

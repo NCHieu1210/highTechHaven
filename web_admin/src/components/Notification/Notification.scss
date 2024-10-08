@@ -1,0 +1,110 @@
+@import "../../baseSCSS/variable";
+
+.notification {
+  &__link {
+    background-color: white;
+    height: 40px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    padding: 0;
+    margin-right: 20px;
+
+    svg {
+      color: $clorTwoHover;
+      font-size: calc(7px + 1vmin);
+    }
+
+
+  }
+
+  div {
+    white-space: normal;
+    line-height: 1.2;
+  }
+
+  ul {
+    padding: 0 !important;
+  }
+
+  ul.ant-dropdown-menu-item-group-list {
+    max-height: 80vh;
+    overflow: hidden;
+    overflow-y: auto;
+    margin: 0 !important;
+
+    li {
+      padding: 0 !important;
+    }
+  }
+
+  /* Tùy chỉnh thanh cuộn */
+  ul.ant-dropdown-menu-item-group-list::-webkit-scrollbar {
+    width: 5px;
+    /* Độ rộng thanh cuộn */
+  }
+
+  ul.ant-dropdown-menu-item-group-list::-webkit-scrollbar-thumb {
+    background-color: #888;
+    /* Màu của thanh cuộn */
+    border-radius: 4px;
+    /* Bo tròn góc thanh cuộn */
+  }
+
+  ul.ant-dropdown-menu-item-group-list::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+    /* Màu khi hover */
+  }
+
+  ul.ant-dropdown-menu-item-group-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* Màu nền của thanh cuộn */
+  }
+
+  img {
+    width: 100px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  &__header {
+    width: 100%;
+    justify-content: space-between !important;
+
+    h2 {
+      font-size: calc(18px + 1vmin);
+      color: $clorTwo;
+    }
+
+    button {
+      border-color: white;
+      color: gray;
+
+      &:hover {
+        color: $clorOne !important;
+        border-color: white !important;
+      }
+    }
+  }
+
+  &__lastTime {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    color: gray;
+  }
+
+  &__space {
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 0;
+    max-width: 666px;
+
+    &--notSeen {
+      background-color: $clorThree;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+}

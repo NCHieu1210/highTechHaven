@@ -12,20 +12,18 @@ import { NavLink } from 'react-router-dom';
 const Orders = () => {
   const [ordersList, setOrdersList] = useState();
   const connectionRef = useRef(null); // Sử dụng useRef để lưu trữ connection
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   //Pagination
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 3;
   const handlePageChange = (page) => {
     setCurrentPage(page);
-
   };
   const paginatedOrders = ordersList && ordersList.slice((currentPage - 1) * pageSize, currentPage * pageSize);
   //END Pagination  
   useEffect(() => {
     const startConnect = async () => {
-      setLoading(true);
       const newConnection = await connectSignalR("/ordersHub");
       connectionRef.current = newConnection; // Lưu connection vào useRef
       try {
@@ -39,7 +37,6 @@ const Orders = () => {
                 (update.updateName === "Cancelled" && update.status === true)));
           setOrdersList(ordersIsIncomplete);
         });
-
         newConnection.invoke("GetByToken");
       } catch (error) {
         console.log("Error:", error.message);
@@ -48,7 +45,6 @@ const Orders = () => {
         setLoading(false);
       }
     }
-
     startConnect();
     return () => {
       if (connectionRef.current) {
@@ -60,10 +56,11 @@ const Orders = () => {
 
   return (
     <>
-      <div className="userDetails">
-        <h1>TRA CỨU ĐƠN HÀNG</h1>
-        <br></br>
-        <Spin spinning={loading} style={{ minHeight: "50vh", width: "100%" }}>
+
+      <Spin spinning={loading}>
+        <div className="userDetails">
+          <h1>TRA CỨU ĐƠN HÀNG</h1>
+          <br></br>
           {paginatedOrders && (paginatedOrders.length > 0 ?
             (paginatedOrders.map((order, index) =>
             (<div key={index}>
@@ -71,7 +68,7 @@ const Orders = () => {
                 title={<>
                   <div className="title">
                     <div>
-                      <ViewOrder orders={order}></ViewOrder>{`Đơn hàng: ${order.code}`}
+                      <ViewOrder orders={order} /><span style={{ marginLeft: "10px" }}>{`Đơn hàng: ${order.code}`}</span>
                     </div>
                     <div>{lastUpdateName(order) == "Unconfirmed" || lastUpdateName(order) == "Processing" ?
                       <div><UserCancelledButton orderID={order.id} /></div> :
@@ -92,17 +89,18 @@ const Orders = () => {
               <NoData content="Bạn hiện chưa có lịch sử mua hàng"></NoData>
               <NavLink to="/products"><Button className="btn__two">Mua hàng ngay</Button></NavLink>
             </div>))}
-        </Spin>
-      </div >
-      {ordersList && paginatedOrders.length > 0 &&
-        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '7px' }}>
-          <Pagination
-            current={currentPage}
-            pageSize={pageSize}
-            total={ordersList.length}
-            onChange={handlePageChange}
-          />
-        </div>}
+        </div>
+        {ordersList && paginatedOrders.length > 0 &&
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '7px' }}>
+            <Pagination
+              current={currentPage}
+              pageSize={pageSize}
+              total={ordersList.length}
+              onChange={handlePageChange}
+            />
+          </div>}
+      </Spin>
+
     </>
   )
 }

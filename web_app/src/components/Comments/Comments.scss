@@ -136,6 +136,16 @@
       text-align: end;
       border-left: 1px solid rgba(128, 128, 128, 0.3);
     }
+
+    @media screen and (max-width: $mobile-width) {
+      button {
+        margin-left: 5px;
+      }
+
+      &--quantityLike {
+        margin-left: 5px;
+      }
+    }
   }
 
   &__divider {
@@ -165,33 +175,19 @@
     }
 
     li {
-      padding: 15px 0 !important;
+      padding: 5px 0 !important;
     }
 
 
     .subComments {
       padding-left: 25px;
+      transform: translateY(-20px);
 
       .comments__list {
         border-left: 1px solid rgba(128, 128, 128, 0.3);
         padding-left: 10px;
+        padding-top: 15px;
       }
-
-      // .ant-list-item-meta-avatar {
-      //   @include display-flex();
-      //   align-items: center;
-
-      //   &::before {
-      //     width: calc(0.05* 100%);
-      //     height: calc(0.05* 100%);
-      //     position: relative;
-      //     border-block-start: 1px solid transparent;
-      //     border-block-start-color: inherit;
-      //     border-block-end: 0;
-      //     transform: translateY(50%);
-      //     content: '';
-      //   }
-      // }
 
       &__hide {
         display: none;

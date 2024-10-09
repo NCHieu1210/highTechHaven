@@ -6,6 +6,8 @@
   animation: fadeInRight;
   /* referring directly to the animation's @keyframe declaration */
   animation-duration: 0.7s;
+  min-height: 70vh;
+  width: 100%;
 
   @media screen and (max-width: $desktop-width) {
     animation: fadeIn;

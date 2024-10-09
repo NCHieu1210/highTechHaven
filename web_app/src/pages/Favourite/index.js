@@ -1,4 +1,4 @@
-import { Button, Table, Tag } from "antd";
+import { Button, Spin, Table, Tag } from "antd";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,6 +14,7 @@ import NoData from "../../components/NoData";
 const FavouriteProduct = () => {
   const favorites = useSelector(state => state.data.favorites);
   const [listFavorites, setListFavorites] = useState();
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
 
   const handleAddToCart = (productVariantID) => {
@@ -56,6 +57,7 @@ const FavouriteProduct = () => {
     }
 
     const getProductFavorites = async () => {
+      setLoading(true);
       try {
         let listProductOptionId = favorites.map(item => ({ id: item.productOptionID }));
         const queryParams = generateQueryParams(listProductOptionId);
@@ -70,11 +72,11 @@ const FavouriteProduct = () => {
       catch (error) {
         console.log("Error", error);
       }
+      finally {
+        setLoading(false);
+      }
     }
-
     getProductFavorites();
-
-
   }, [favorites])
 
   const columns = [
@@ -150,18 +152,19 @@ const FavouriteProduct = () => {
 
   return (
     <>
-      {listFavorites && (listFavorites.length > 0 ?
-        (<div className="userDetails">
+      <Spin spinning={loading}>
+        <div className="userDetails">
           <h1>SẢN PHẨM YÊU THÍCH CỦA BẠN</h1>
           <br></br>
-          <Table columns={isTablet ? columnsTablet : columns} dataSource={listFavorites} size='large' title={null} // Ẩn tiêu đề
-            pagination={{ position: ['bottomCenter'], pageSize: 4 }} />
-        </div>) :
-        (<div className="userDetails">
-          <h1>SẢN PHẨM YÊU THÍCH CỦA BẠN</h1>
-          <NoData content="Bạn hiện chưa có sản phẩm yêu thích nào"></NoData>
-        </div>)
-      )}
+          {listFavorites && (listFavorites.length > 0 ?
+            (<>
+              <Table columns={isTablet ? columnsTablet : columns} dataSource={listFavorites} size='large' title={null} // Ẩn tiêu đề
+                pagination={{ position: ['bottomCenter'], pageSize: 4 }} />
+            </>) :
+            (<NoData content="Bạn hiện chưa có sản phẩm yêu thích nào"></NoData>)
+          )}
+        </div>
+      </Spin>
     </>
   )
 }

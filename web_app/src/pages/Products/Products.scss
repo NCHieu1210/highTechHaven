@@ -248,9 +248,29 @@
           object-fit: cover;
         }
 
-        // @media (max-width: $mobile-width) {
-        //   height: 100px;
-        // }
+        @media (max-width: $mobile-width) {
+          padding-top: 15px;
+        }
+      }
+
+      .swiper-button-prev {
+        left: -10px;
+        /* Khoảng cách từ bên trái */
+        transform: translateY(-15px) scale(0.7);
+      }
+
+      .swiper-button-next {
+        right: -10px;
+        transform: translateY(-15px) scale(0.7);
+        /* Khoảng cách từ bên phải */
+      }
+
+      .swiper-pagination {
+        transform: translateY(10px);
+
+        .swiper-pagination-bullet-active {
+          background-color: $clorTwoHover !important;
+        }
       }
 
       .swiper-button-prev,
@@ -258,28 +278,14 @@
         background-color: #ffab3ddd;
         // opacity: 0.9;
         color: white;
-        padding: 40px 25px;
+        padding: 50px 25px;
         border-radius: 10px;
 
         @media (max-width: $mobile-width) {
-          padding: 30px 20px;
+          padding: 40px 22px;
           border-radius: 5px;
-        }
-      }
+          transform: translateY(-12px) scale(0.7);
 
-      .swiper-button-prev {
-        left: -10px;
-        /* Khoảng cách từ bên trái */
-      }
-
-      .swiper-button-next {
-        right: -10px;
-        /* Khoảng cách từ bên phải */
-      }
-
-      .swiper-pagination {
-        .swiper-pagination-bullet-active {
-          background-color: $clorTwoHover !important;
         }
       }
 
@@ -347,12 +353,12 @@
             padding-left: 15px;
 
             p {
-              font-size: calc(8px + 1vmin);
+              font-size: calc(6px + 1vmin);
             }
 
             span {
               opacity: 0.8;
-              font-size: calc(7px + 1vmin);
+              font-size: calc(6px + 1vmin);
             }
           }
 
@@ -384,6 +390,10 @@
           }
         }
       }
+    }
+
+    &--mobile {
+      margin: 25px 0;
     }
   }
 }

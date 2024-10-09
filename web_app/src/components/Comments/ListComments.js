@@ -1,5 +1,5 @@
 import { CaretDownOutlined, CaretUpOutlined, DownOutlined, FieldTimeOutlined, HeartOutlined, MessageOutlined, UpOutlined } from "@ant-design/icons";
-import { Avatar, Button, Divider, List, message, Tag, Tooltip, Tree } from "antd";
+import { Avatar, Button, Divider, List, message, Space, Tag, Tooltip, Tree } from "antd";
 import { getPathImage } from "../../helpers/getPathImage";
 import moment from "moment";
 import { Children, useEffect, useState } from "react";
@@ -85,29 +85,31 @@ const ListComments = (props) => {
                       <em> {caCulateLastTime(item.lastCommentTime)}</em>
                     </Tooltip>
                     {/* Like comment button */}
-                    <Button
-                      className="comments__footer--like"
-                      onClick={() => handleLikeComment(item.id)}>
-                      {likedComment && likedComment.find(lkc => lkc.commentID === item.id) ?
-                        (<><HeartIcon style={{ color: 'red' }} /> <span style={{ color: 'red' }}>Thích</span></>) :
-                        (<><HeartOutlined /> <span>Thích</span></>)}
-                    </Button>
-                    {/* Rep comments button */}
-                    <Button
-                      onClick={() => {
-                        item.parentCommentID ? setCheckId(item.parentCommentID) : setCheckId(item.id);
-                        setListSubCommentShow([...listSubCommentShow, item.id]);
-                      }}>
-                      <MessageOutlined />Phản hồi
-                    </Button>
-                    {/* Quantity liked */}
-                    {item.quantityLiked > 0 &&
-                      <div className="comments__footer--quantityLike">
-                        <HeartIcon style={{ color: 'red' }} />
-                        {item.quantityLiked > 1 && item.quantityLiked}
-                      </div>
-                    }
-                    {/* END RepComments button */}
+                    <Space size={0}>
+                      <Button
+                        className="comments__footer--like"
+                        onClick={() => handleLikeComment(item.id)}>
+                        {likedComment && likedComment.find(lkc => lkc.commentID === item.id) ?
+                          (<><HeartIcon style={{ color: 'red' }} /> <span style={{ color: 'red' }}>Thích</span></>) :
+                          (<><HeartOutlined /> <span>Thích</span></>)}
+                      </Button>
+                      {/* Rep comments button */}
+                      <Button
+                        onClick={() => {
+                          item.parentCommentID ? setCheckId(item.parentCommentID) : setCheckId(item.id);
+                          setListSubCommentShow([...listSubCommentShow, item.id]);
+                        }}>
+                        <MessageOutlined />Phản hồi
+                      </Button>
+                      {/* Quantity liked */}
+                      {item.quantityLiked > 0 &&
+                        <div className="comments__footer--quantityLike">
+                          <HeartIcon style={{ color: 'red' }} />
+                          {item.quantityLiked > 1 && item.quantityLiked}
+                        </div>
+                      }
+                      {/* END RepComments button */}
+                    </Space>
                   </div>
                 </div>}
               //End Title and Description

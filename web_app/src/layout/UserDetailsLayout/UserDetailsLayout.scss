@@ -46,6 +46,10 @@
       border-left: none;
       // overflow: hidden;
     }
+
+    @media screen and (max-width: $mobile-width) {
+      padding-bottom: 45px;
+    }
   }
 
   &__sider {

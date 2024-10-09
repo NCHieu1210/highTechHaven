@@ -181,7 +181,7 @@ const ProductsDetail = () => {
                 <br></br>
                 <ProductImage images={product.productImages}></ProductImage>
               </div>
-              <div className={wBrowser < 1024 ? "productDtails__right" : "productDtails__right productDtails__hide"}>
+              <div className={wBrowser < 1024 ? "productDtails__right--mobile" : "productDtails__right productDtails__hide"}>
                 <Card
                   title="TÙY CHỌN"
                   bordered={true}

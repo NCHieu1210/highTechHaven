@@ -29,6 +29,7 @@ const UserDetails = () => {
 
   //Call API
   useEffect(() => {
+    setLoading(true);
     const getUserByToken = async () => {
       const token = getCookie("hthToken");
       try {
@@ -42,6 +43,9 @@ const UserDetails = () => {
       }
       catch (error) {
         console.log(error);
+      }
+      finally {
+        setLoading(false);
       }
     }
     getUserByToken();
@@ -133,154 +137,155 @@ const UserDetails = () => {
 
   return (
     <>
-      {user && (
-        <div className="userDetails">
+      <Spin spinning={loading}>
+        <div className="userDetails" >
           <h1>THÔNG TIN NGƯỜI DÙNG</h1>
           <br></br>
-          <span>Xin chào <strong>{`${user.firstName} ${user.lastName}!`}</strong></span>
-          <Tooltip title="Chỉnh sửa thông tin" color="cyan" placement="right">
-            <Button onClick={() => setEdit(!edit)} shape="circle" className="userDetails__form--edit"><EditOutlined /></Button>
-          </Tooltip>
-          <br></br>
-          <br></br>
-
-          <Spin spinning={loading}>
-            {/* Form nhập dữ liệu */}
-            <Form
-              layout="horizontal"
-              labelCol={{ span: 5 }}
-              wrapperCol={{ span: 17 }}
-              form={form}
-              name={user.name}
-              initialValues={{
-                ...user,
-                sex: user.sex ? "true" : "false",
-                birthday: user.birthday && user.birthday !== "0001-01-01T00:00:00" ? moment(user.birthday) : null
-              }}
-              onFinish={onFinish}
-              onFinishFailed={onFinishFailed}
-              autoComplete="off"
-              size='large'
-            >
-              <div className="userDetails__form">
-                <div>
-                  {/* Nhập họ  */}
-                  <Form.Item label="Họ" name="firstName"
-                    rules={[
-                      {
-                        required: true,
-                        message: 'Vui lòng không bỏ trống',
-                      },
-                    ]}
-                  ><Input disabled={!edit} />
-                  </Form.Item>
-                  {/* END Nhập họ */}
-
-                  {/* Nhập tên  */}
-                  <Form.Item label="Tên" name="lastName"
-                    rules={[
-                      {
-                        required: true,
-                        message: 'Vui lòng không bỏ trống',
-                      },
-                    ]}
-                  ><Input disabled={!edit} />
-                  </Form.Item>
-                  {/* END Nhập tên */}
-
-                  {/* Nhập ngày sinh  */}
-                  <Form.Item label="Ngày sinh" name="birthday"
-                    rules={[
-                      {
-                        required: true,
-                        message: 'Vui lòng không bỏ trống',
-                      },
-                    ]}>
-                    <DatePicker disabled={!edit} style={{ width: '100%' }} format="DD/MM/YYYY" />
-                  </Form.Item>
-                  {/* END Nhập ngày sinh */}
-
-                  {/* Nhập giới tính */}
-                  <Form.Item label="Giới tính" name="sex"
-                    rules={[
-                      {
-                        required: true,
-                        message: 'Bạn phải chọn một giới tính',
-                      },
-                    ]}>
-                    <Select placeholder="Chọn giới tính" disabled={!edit}>
-                      <Select.Option value="true">Nam</Select.Option>
-                      <Select.Option value="false">Nữ</Select.Option>
-                    </Select>
-                  </Form.Item>
-                  {/* END Nhập giới tính */}
-
-                  {/* Nhập số điện thoại  */}
-                  <Form.Item label="Số điện thoại" name="phoneNumber"
-                    rules={[
-                      {
-                        required: true,
-                        message: 'Vui lòng không bỏ trống',
-                        pattern: /^0[0-9]{9}$/, message: 'Số điện thoại không hợp lệ!',
-                      },
-                    ]}>
-                    <Input disabled={!edit} />
-                  </Form.Item>
-                  {/* END Nhập số điện thoại */}
-
-                  {/* Nhập email  */}
-                  <Form.Item label="Email" name="email">
-                    <Input disabled />
-                  </Form.Item>
-                  {/* END Nhập email */}
-                </div>
-
-                <div>
-                  {/* Nhập avatar */}
-                  <Form.Item label="" name="fileavarar" getValueFromEvent={normFile}  >
-                    <Upload disabled={!edit} className="userDetails__form--avatar " listType="picture-card" fileList={fileList} maxCount={1}
-                      onChange={handleChange} beforeUpload={beforeUpload} showUploadList={{ showPreviewIcon: false }}
-                    >
-                      <button type="button"
-                        disabled={!edit}
-                        style={{
-                          border: 0,
-                          background: 'none',
-                        }}
-                      >
-                        {fileList.length >= 1 ?
-                          (<div className={edit ? '' : 'displayNone'} >
-                            <div> <EditOutlined /> Chỉnh sủa</div>
-                          </div>) :
-                          (<div>
-                            <div><PlusOutlined />Tải lên</div>
-                          </div>)
-                        }
-                      </button>
-                    </Upload>
-                  </Form.Item>
-                  {/* END Nhập logo */}
-                </div>
-              </div>
-
+          {user && (
+            <div>
+              <span>Xin chào <strong>{`${user.firstName} ${user.lastName}!`}</strong></span>
+              <Tooltip title="Chỉnh sửa thông tin" color="cyan" placement="right">
+                <Button onClick={() => setEdit(!edit)} shape="circle" className="userDetails__form--edit"><EditOutlined /></Button>
+              </Tooltip>
               <br></br>
-              {/* Button submit */}
-              <Form.Item
-                wrapperCol={{
-                  offset: 5,
-                }}>
-                <Button type="primary" htmlType="submit"
-                  className={edit ? 'btn__two userDetails__form--btn ' : ' displayNone'} >
-                  <SaveOutlined />
-                  Lưu lại
-                </Button>
-              </Form.Item>
-              {/* END Button submit */}
-            </Form>
-            {/* END Form nhập dữ liệu */}
-          </Spin >
-        </div >
-      )}
+              <br></br>
+              {/* Form nhập dữ liệu */}
+              <Form
+                layout="horizontal"
+                labelCol={{ span: 5 }}
+                wrapperCol={{ span: 17 }}
+                form={form}
+                name={user.name}
+                initialValues={{
+                  ...user,
+                  sex: user.sex ? "true" : "false",
+                  birthday: user.birthday && user.birthday !== "0001-01-01T00:00:00" ? moment(user.birthday) : null
+                }}
+                onFinish={onFinish}
+                onFinishFailed={onFinishFailed}
+                autoComplete="off"
+                size='large'
+              >
+                <div className="userDetails__form">
+                  <div>
+                    {/* Nhập họ  */}
+                    <Form.Item label="Họ" name="firstName"
+                      rules={[
+                        {
+                          required: true,
+                          message: 'Vui lòng không bỏ trống',
+                        },
+                      ]}
+                    ><Input disabled={!edit} />
+                    </Form.Item>
+                    {/* END Nhập họ */}
+
+                    {/* Nhập tên  */}
+                    <Form.Item label="Tên" name="lastName"
+                      rules={[
+                        {
+                          required: true,
+                          message: 'Vui lòng không bỏ trống',
+                        },
+                      ]}
+                    ><Input disabled={!edit} />
+                    </Form.Item>
+                    {/* END Nhập tên */}
+
+                    {/* Nhập ngày sinh  */}
+                    <Form.Item label="Ngày sinh" name="birthday"
+                      rules={[
+                        {
+                          required: true,
+                          message: 'Vui lòng không bỏ trống',
+                        },
+                      ]}>
+                      <DatePicker disabled={!edit} style={{ width: '100%' }} format="DD/MM/YYYY" />
+                    </Form.Item>
+                    {/* END Nhập ngày sinh */}
+
+                    {/* Nhập giới tính */}
+                    <Form.Item label="Giới tính" name="sex"
+                      rules={[
+                        {
+                          required: true,
+                          message: 'Bạn phải chọn một giới tính',
+                        },
+                      ]}>
+                      <Select placeholder="Chọn giới tính" disabled={!edit}>
+                        <Select.Option value="true">Nam</Select.Option>
+                        <Select.Option value="false">Nữ</Select.Option>
+                      </Select>
+                    </Form.Item>
+                    {/* END Nhập giới tính */}
+
+                    {/* Nhập số điện thoại  */}
+                    <Form.Item label="Số điện thoại" name="phoneNumber"
+                      rules={[
+                        {
+                          required: true,
+                          message: 'Vui lòng không bỏ trống',
+                          pattern: /^0[0-9]{9}$/, message: 'Số điện thoại không hợp lệ!',
+                        },
+                      ]}>
+                      <Input disabled={!edit} />
+                    </Form.Item>
+                    {/* END Nhập số điện thoại */}
+
+                    {/* Nhập email  */}
+                    <Form.Item label="Email" name="email">
+                      <Input disabled />
+                    </Form.Item>
+                    {/* END Nhập email */}
+                  </div>
+
+                  <div>
+                    {/* Nhập avatar */}
+                    <Form.Item label="" name="fileavarar" getValueFromEvent={normFile}  >
+                      <Upload disabled={!edit} className="userDetails__form--avatar " listType="picture-card" fileList={fileList} maxCount={1}
+                        onChange={handleChange} beforeUpload={beforeUpload} showUploadList={{ showPreviewIcon: false }}
+                      >
+                        <button type="button"
+                          disabled={!edit}
+                          style={{
+                            border: 0,
+                            background: 'none',
+                          }}
+                        >
+                          {fileList.length >= 1 ?
+                            (<div className={edit ? '' : 'displayNone'} >
+                              <div> <EditOutlined /> Chỉnh sủa</div>
+                            </div>) :
+                            (<div>
+                              <div><PlusOutlined />Tải lên</div>
+                            </div>)
+                          }
+                        </button>
+                      </Upload>
+                    </Form.Item>
+                    {/* END Nhập logo */}
+                  </div>
+                </div>
+
+                <br></br>
+                {/* Button submit */}
+                <Form.Item
+                  wrapperCol={{
+                    offset: 5,
+                  }}>
+                  <Button type="primary" htmlType="submit"
+                    className={edit ? 'btn__two userDetails__form--btn ' : ' displayNone'} >
+                    <SaveOutlined />
+                    Lưu lại
+                  </Button>
+                </Form.Item>
+                {/* END Button submit */}
+              </Form>
+              {/* END Form nhập dữ liệu */}
+            </div >
+          )}
+        </div>
+      </Spin >
     </>
   );
 }

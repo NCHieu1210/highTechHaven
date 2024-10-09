@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getDeliveryAddressByTokenService } from "../../services/deliveryAddressServer";
-import { Table } from "antd";
+import { Spin, Table } from "antd";
 import CreateDeliveryAddress from "./CreateDeliveryAddress";
 import { useDispatch, useSelector } from "react-redux";
 import { reRender } from "../../actions/reRender";
@@ -10,11 +10,13 @@ import NoData from "../../components/NoData";
 const DeliveryAddress = () => {
   const [dataList, setDataList] = useState();
   const [data, setData] = useState();
+  const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
   const isReRender = useSelector(state => state.reRender);
 
   useEffect(() => {
     const getAllData = async () => {
+      setLoading(true);
       try {
         const res = await getDeliveryAddressByTokenService();
         if (res.success) {
@@ -26,6 +28,9 @@ const DeliveryAddress = () => {
       }
       catch (error) {
         console.log("Error", error);
+      }
+      finally {
+        setLoading(false);
       }
     }
     getAllData();
@@ -78,23 +83,27 @@ const DeliveryAddress = () => {
   ];
   return (
     <>
-      {dataList && data && (dataList.length > 0 ?
-        (<div className="userDetails">
-          <div className="userDetails__deliveryAddress">
-            <h1>ĐỊA CHỈ GIAO HÀNG CỦA BẠN</h1>
-            <div>
+      <Spin spinning={loading}>
+        <div className="userDetails">
+          {dataList && data && (dataList.length > 0 ?
+            (<>
+              <div className="userDetails__deliveryAddress">
+                <h1>ĐỊA CHỈ GIAO HÀNG CỦA BẠN</h1>
+                <div>
+                  <CreateDeliveryAddress></CreateDeliveryAddress>
+                </div>
+              </div>
+              <br></br>
+              <Table columns={columns} dataSource={dataList} size='large'
+                pagination={{ position: ['bottomCenter'], pageSize: 7 }} />
+            </>) :
+            (<div style={{ textAlign: "center" }}>
+              <NoData content="Bạn hiện chưa có địa chỉ giao hàng"></NoData>
               <CreateDeliveryAddress></CreateDeliveryAddress>
-            </div>
-          </div>
-          <br></br>
-          <Table columns={columns} dataSource={dataList} size='large'
-            pagination={{ position: ['bottomCenter'], pageSize: 7 }} />
-        </div>) :
-        (<div style={{ textAlign: "center" }}>
-          <NoData content="Bạn hiện chưa có địa chỉ giao hàng"></NoData>
-          <CreateDeliveryAddress></CreateDeliveryAddress>
-        </div>)
-      )}
+            </div>)
+          )}
+        </div>
+      </Spin>
     </>
   )
 }

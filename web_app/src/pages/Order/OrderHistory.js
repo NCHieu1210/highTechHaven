@@ -120,11 +120,11 @@ const OrderHistory = () => {
       catch (error) {
         console.log("Error:", error.message);
       }
+      finally {
+        setLoading(false);
+      }
     }
-
     getOrders()
-
-    setLoading(false);
   }, [])
 
   const columns = [
@@ -167,29 +167,29 @@ const OrderHistory = () => {
     },
   ];
 
-
   return (
     <>
       <Spin spinning={loading}>
-        {ordersList && (ordersList.length > 0 ?
-          (<div className="userDetails">
-            <h1>LỊCH SỬ MUA HÀNG</h1>
-            <br></br>
-            <Table columns={columns} dataSource={ordersList} size='large'
-              pagination={{ position: ['bottomCenter'], pageSize: 7 }}
-              scroll={{
-                x: 'max-content',
-                y: window.innerHeight - 480
-              }} />
-          </div>) :
-          (<div className="userDetails">
-            <h1>Lịch sử mua hàng</h1>
-            <div style={{ textAlign: "center" }}>
-              <NoData content="Bạn hiện chưa có lịch sử mua hàng"></NoData>
-              <NavLink to="/products"><Button className="btn__two">Mua hàng ngay</Button></NavLink>
-            </div>
-          </div>)
-        )}
+        <div className="userDetails">
+          <h1>LỊCH SỬ MUA HÀNG</h1>
+          <br></br>
+          {ordersList && (ordersList.length > 0 ?
+            (<>
+              <Table columns={columns} dataSource={ordersList} size='large'
+                pagination={{ position: ['bottomCenter'], pageSize: 7 }}
+                scroll={{
+                  x: 'max-content',
+                  y: window.innerHeight - 420
+                }} />
+            </>) :
+            (<>
+              <div style={{ textAlign: "center" }}>
+                <NoData content="Bạn hiện chưa có lịch sử mua hàng"></NoData>
+                <NavLink to="/products"><Button className="btn__two">Mua hàng ngay</Button></NavLink>
+              </div>
+            </>)
+          )}
+        </div>
       </Spin>
     </>
   )

@@ -164,11 +164,17 @@
       }
     }
 
+    li {
+      padding: 15px 0 !important;
+    }
+
+
     .subComments {
       padding-left: 25px;
 
       .comments__list {
         border-left: 1px solid rgba(128, 128, 128, 0.3);
+        padding-left: 10px;
       }
 
       // .ant-list-item-meta-avatar {

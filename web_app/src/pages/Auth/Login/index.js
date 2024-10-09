@@ -87,40 +87,36 @@ const Login = () => {
                   <img src={loginImage} alt="loginLogo"></img>
 
                   {/* Ô nhập UserName */}
-                  <Tooltip title="Email" placement="left" color="cyan">
-                    <Form.Item
-                      name="username"
-                      size="large"
-                      rules={[
-                        { required: true, message: 'Tên đăng nhập không để trống!', size: { fontSize: '12px' } },
-                        { type: 'email', message: 'Địa chi email không hợp lệ!', style: { fontSize: '20px' } }
-                      ]}
-                    >
+                  <Form.Item
+                    name="username"
+                    size="large"
+                    rules={[
+                      { required: true, message: 'Tên đăng nhập không để trống!', size: { fontSize: '12px' } },
+                      { type: 'email', message: 'Địa chi email không hợp lệ!', style: { fontSize: '20px' } }
+                    ]}
+                  >
 
-                      <Input
-                        size="large"
-                        prefix={<UserOutlined className="site-form-item-icon" />}
-                        placeholder="Tên đăng nhập hoặc Gmail" />
-                    </Form.Item>
-                  </Tooltip>
+                    <Input
+                      size="large"
+                      prefix={<UserOutlined className="site-form-item-icon" />}
+                      placeholder="Tên đăng nhập hoặc Gmail" />
+                  </Form.Item>
 
                   <br></br>
 
                   {/* Ô nhập mật khẩu */}
-                  <Tooltip title="Mật khẩu" placement="left" color="cyan">
-                    <Form.Item
-                      name="password"
-                      rules={[{ validator: validatePassword }]}
-                    >
+                  <Form.Item
+                    name="password"
+                    rules={[{ validator: validatePassword }]}
+                  >
 
-                      <Input.Password
-                        size="large"
-                        prefix={<LockOutlined className="site-form-item-icon" />}
-                        type="password"
-                        placeholder="Mật khẩu"
-                      />
-                    </Form.Item>
-                  </Tooltip>
+                    <Input.Password
+                      size="large"
+                      prefix={<LockOutlined className="site-form-item-icon" />}
+                      type="password"
+                      placeholder="Mật khẩu"
+                    />
+                  </Form.Item>
 
                   <br></br>
 

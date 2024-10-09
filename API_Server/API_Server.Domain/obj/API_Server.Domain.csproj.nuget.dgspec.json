@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ProjectForMe\\highTeachHaven\\API_Server\\API_Server.Domain\\API_Server.Domain.csproj": {}
+    "D:\\ProjectForMe\\highTechHaven\\API_Server\\API_Server.Domain\\API_Server.Domain.csproj": {}
   },
   "projects": {
-    "D:\\ProjectForMe\\highTeachHaven\\API_Server\\API_Server.Domain\\API_Server.Domain.csproj": {
+    "D:\\ProjectForMe\\highTechHaven\\API_Server\\API_Server.Domain\\API_Server.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ProjectForMe\\highTeachHaven\\API_Server\\API_Server.Domain\\API_Server.Domain.csproj",
+        "projectUniqueName": "D:\\ProjectForMe\\highTechHaven\\API_Server\\API_Server.Domain\\API_Server.Domain.csproj",
         "projectName": "API_Server.Domain",
-        "projectPath": "D:\\ProjectForMe\\highTeachHaven\\API_Server\\API_Server.Domain\\API_Server.Domain.csproj",
+        "projectPath": "D:\\ProjectForMe\\highTechHaven\\API_Server\\API_Server.Domain\\API_Server.Domain.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\ProjectForMe\\highTeachHaven\\API_Server\\API_Server.Domain\\obj\\",
+        "outputPath": "D:\\ProjectForMe\\highTechHaven\\API_Server\\API_Server.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

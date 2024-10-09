@@ -1,5 +1,5 @@
 import { HeartOutlined, HeartTwoTone, InfoCircleOutlined, ShoppingCartOutlined } from "@ant-design/icons";
-import { Badge, Button, Card, Rate, Spin, Tooltip } from "antd";
+import { Badge, Button, Card, Rate, Space, Spin, Tooltip } from "antd";
 import { NavLink } from "react-router-dom";
 import { getPathImage } from "../../helpers/getPathImage";
 import Meta from "antd/es/card/Meta";
@@ -33,6 +33,7 @@ const CardProduct = (props) => {
   const [showModalLogin, setShowModalLogin] = useState(false);
   const [content, setContent] = useState("");
   const dispatch = useDispatch();
+  const [tooltipVisible, setTooltipVisible] = useState(true); // Khởi tạo trạng thái tooltip
 
   useEffect(() => {
     const checkFavoriteAsync = async () => {
@@ -56,7 +57,6 @@ const CardProduct = (props) => {
     if (checkLoggedIn()) {
       checkFavoriteAsync();
     }
-    setLoading(false);
     setReRender(false);
   }, [props, reRender])
 
@@ -67,13 +67,21 @@ const CardProduct = (props) => {
     // return `${new Intl.NumberFormat('vi-VN').format(price)} đ`;
     return price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
   };
-  const handleAddToCart = (productVariantID) => {
-    AddToCart(productVariantID, 1, dispatch, setShowModalLogin);
+  const handleAddToCart = async (productVariantID) => {
+    setTooltipVisible(false);
+    setLoading(true);
+    await AddToCart(productVariantID, 1, dispatch, setShowModalLogin, setLoading);
+    setLoading(false);
+    setTooltipVisible(true);
   }
 
-  const handleAddToFavorites = (optionID) => {
-    AddToFavorites(optionID, dispatch, setShowModalLogin);
+  const handleAddToFavorites = async (optionID) => {
+    setTooltipVisible(false);
+    setLoading(true);
+    await AddToFavorites(optionID, dispatch, setShowModalLogin);
     setReRender(true);
+    setLoading(true);
+    setTooltipVisible(true);
   }
   const checkDiscount = (product) => {
     return product.discount === 0 ? "ant-ribbon__none" : "";
@@ -105,7 +113,8 @@ const CardProduct = (props) => {
                   <div className="productHover">
                     <div></div>
                     <div>
-                      <Tooltip title="Chi tiết" placement="left" color="#f88d00">
+                      <br></br>
+                      <Tooltip title={tooltipVisible ? "Chi tiết" : ""} placement="left" color="#f88d00">
                         <NavLink
                           to={`/products/${product.slug}?${generateQueryParams({
                             option: product.productVariants.option,
@@ -115,13 +124,13 @@ const CardProduct = (props) => {
                         </NavLink>
                       </Tooltip>
                       <br></br>
-                      <Tooltip title="Yêu thích" placement="left" color="#f88d00">
+                      <Tooltip title={tooltipVisible ? "Yêu thích" : ""} placement="left" color="#f88d00">
                         <Button onClick={() => { handleAddToFavorites(product.productVariants.optionID); setContent("thêm sản phẩm vào danh sách yêu thích."); }}>
                           <HeartOutlined />
                         </Button>
                       </Tooltip>
                       <br></br>
-                      <Tooltip title="Thêm giỏ hàng" placement="left" color="#f88d00">
+                      <Tooltip title={tooltipVisible ? "Thêm giỏ hàng" : ""} placement="left" color="#f88d00" >
                         <Button onClick={() => { handleAddToCart(product.productVariants.id); setContent("thêm sản phẩm vào giỏ hàng."); }} >
                           <ShoppingCartOutlined />
                         </Button>

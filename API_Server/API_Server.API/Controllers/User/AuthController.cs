@@ -236,7 +236,7 @@ namespace API_Server.API.Controllers.User
         {
             var token = await _authService.GetGoogleTokenAsync(code);
             var userInfoToken = await _authService.GetGoogleUserInfoAsync(token);
-            return Redirect($"http://localhost:3000/login-with-google/?token={userInfoToken}");
+            return Redirect($"https://hth-ecom.vercel.app/login-with-google/?token={userInfoToken}");
         }
     }
 

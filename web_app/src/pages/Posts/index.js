@@ -127,7 +127,7 @@ const Post = () => {
                   <FilterOutlined /> Bộ lọc
                 </Button>
                 <br></br>
-                <Drawer title={<><FilterOutlined /> Bộ lọc</>} onClose={onClose} open={open} >
+                <Drawer title={<><FilterOutlined /> Bộ lọc</>} onClose={onClose} open={open} width={300} >
                   <h2>Chuyên mục bài viết</h2>
                   <br></br>
                   <Tree

@@ -22,13 +22,16 @@
 
     .swiper-button-prev,
     .swiper-button-next {
-      background-color: #ffab3ddd;
+      background-color: #ffab3dac;
       // opacity: 0.9;
       color: white;
-      padding: 50px 25px;
+      padding: 60px 18px;
       border-radius: 10px;
-      transform: translateY(-55px) scale(0.7);
+      transform: translateY(-60px) scale(0.7);
 
+      &::after {
+        font-size: 30px;
+      }
 
       // @media (max-width: $mobile-width) {
       //   padding: 30px 20px;

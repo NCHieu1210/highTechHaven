@@ -81,7 +81,7 @@ const Home = () => {
         {/* Banner */}
         <div className="home__banner">
           <img src={bannerLeft} alt="Banner Left" />
-          <img src={bannerRight} alt="Banner Right" />
+          {wBrowser > 480 && <img src={bannerRight} alt="Banner Right" />}
         </div>
         <br></br>
         <br></br>
@@ -105,6 +105,16 @@ const Home = () => {
           <SectionInHome suppliers={suppliers} slug="suppliers" wBrowser={wBrowser} ></SectionInHome>
         </div>
         {/*END Hãng sản xuất */}
+
+        {wBrowser <= 480 &&
+          <div className="home__banner">
+            <img src={bannerRight} alt="Banner Right" />
+
+          </div>
+        }
+        <br></br>
+        <br></br>
+        <br></br>
 
         <div className="home__section">
           <h2>Bài viết nổi bật</h2>

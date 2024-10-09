@@ -1,5 +1,6 @@
 import { getCookie } from "../helpers/cookies";
 const API_Domain = "https://hthecomapiserver.azurewebsites.net/api";
+// const API_Domain = "https://localhost:7202/api";
 const getToken = () => {
   return getCookie("hthToken");
 };

@@ -193,7 +193,7 @@ const ListProductsLayout = () => {
                   <FilterOutlined /> Bộ lọc
                 </Button>
                 <br></br>
-                <Drawer title={<><FilterOutlined /> Bộ lọc</>} onClose={onClose} open={open} >
+                <Drawer title={<><FilterOutlined /> Bộ lọc</>} onClose={onClose} open={open} width={300} >
                   <Filter
                     autoExpandParent={autoExpandParent}
                     selectedKeys={selectedKeys}

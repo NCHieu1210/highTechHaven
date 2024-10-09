@@ -19,7 +19,7 @@ const HeaderDefault = () => {
         alignItems: 'center',
       }}
       >
-        <Space className='header'>
+        <Space className='header' size={0}>
           {/* Trang chủ */}
           <NavLink key={1} to="/">
             <div className='header__logo'>

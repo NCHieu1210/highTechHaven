@@ -77,7 +77,9 @@
       transition: 0.5s;
 
       div:last-child {
-        margin-right: 20px;
+        margin-right: 22px;
+        margin-top: 77px;
+        height: 100%;
       }
 
       button {
@@ -102,18 +104,25 @@
             color: white;
           }
         }
+
+        @media screen and (max-width: $mobile-width) {
+          width: 35px;
+          height: 35px;
+        }
       }
     }
 
-    &:hover .productHover {
-      @include display-flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: 0.5s;
-      animation: pulse;
-      /* referring directly to the animation's @keyframe declaration */
-      animation-duration: 0.7s;
-      /* don't forget to set a duration! */
+    &:hover {
+      .productHover {
+        @include display-flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: 0.5s;
+        animation: pulse;
+        /* referring directly to the animation's @keyframe declaration */
+        animation-duration: 0.7s;
+        /* don't forget to set a duration! */
+      }
     }
 
     //END hover product

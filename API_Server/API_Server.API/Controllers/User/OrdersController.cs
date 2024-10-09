@@ -83,10 +83,10 @@ namespace API_Server.API.Controllers.User
                 var reponse = _ordersService.PaymentExcute(queryDictionary);
                 if (reponse == null || reponse.VnPayResponseCode != "00")
                 {
-                    return Redirect("http://localhost:3000/cart/check-out");
+                    return Redirect("https://hth-ecom.vercel.app/cart/check-out");
 
                 }
-                return Redirect("http://localhost:3000/orders/payment");
+                return Redirect("https://hth-ecom.vercel.app/orders/payment");
             }
             catch (Exception ex)
             {

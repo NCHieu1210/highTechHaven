@@ -473,11 +473,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ProjectForMe\\highTeachHaven\\API_Server\\API_Server.Application\\API_Server.Application.csproj",
+      "projectUniqueName": "D:\\ProjectForMe\\highTechHaven\\API_Server\\API_Server.Application\\API_Server.Application.csproj",
       "projectName": "API_Server.Application",
-      "projectPath": "D:\\ProjectForMe\\highTeachHaven\\API_Server\\API_Server.Application\\API_Server.Application.csproj",
+      "projectPath": "D:\\ProjectForMe\\highTechHaven\\API_Server\\API_Server.Application\\API_Server.Application.csproj",
       "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "D:\\ProjectForMe\\highTeachHaven\\API_Server\\API_Server.Application\\obj\\",
+      "outputPath": "D:\\ProjectForMe\\highTechHaven\\API_Server\\API_Server.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -499,8 +499,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\ProjectForMe\\highTeachHaven\\API_Server\\API_Server.Domain\\API_Server.Domain.csproj": {
-              "projectPath": "D:\\ProjectForMe\\highTeachHaven\\API_Server\\API_Server.Domain\\API_Server.Domain.csproj"
+            "D:\\ProjectForMe\\highTechHaven\\API_Server\\API_Server.Domain\\API_Server.Domain.csproj": {
+              "projectPath": "D:\\ProjectForMe\\highTechHaven\\API_Server\\API_Server.Domain\\API_Server.Domain.csproj"
             }
           }
         }

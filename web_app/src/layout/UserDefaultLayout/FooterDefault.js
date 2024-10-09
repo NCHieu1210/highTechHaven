@@ -92,7 +92,7 @@ const FooterDefault = (props) => {
             </Row>
           </div>
         </div >
-        <div className="userlayout__footer--copyright" style={{ textAlign: "center" }}><em>Copyright @ 2024 HighTechHaven</em></div>
+        <div className="userlayout__footer--copyright" style={{ textAlign: "center" }}><em>Copyright @ 2024 NCH</em></div>
       </Spin>
     </>
   );

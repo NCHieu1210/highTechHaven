@@ -9,9 +9,9 @@ const DeleteFormFavorites = (props) => {
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
 
-  const confirm = (e) => {
+  const confirm = async (e) => {
     setLoading(true);
-    deleteFromFavorites(productOptionID, dispatch);
+    await deleteFromFavorites(productOptionID, dispatch);
     setLoading(false);
   };
   const cancel = (e) => {

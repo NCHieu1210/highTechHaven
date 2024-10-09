@@ -78,8 +78,12 @@
 
       div:last-child {
         margin-right: 22px;
-        margin-top: 77px;
+        margin-top: 15px;
         height: 100%;
+
+        @media screen and (max-width: $desktop-width) {
+          margin-top: 55px;
+        }
       }
 
       button {

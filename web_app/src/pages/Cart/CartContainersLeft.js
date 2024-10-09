@@ -1,12 +1,13 @@
 import { MinusOutlined, PlusOutlined, QuestionCircleOutlined } from "@ant-design/icons";
-import { Button, Image, List, message, Popconfirm, Space } from "antd";
+import { Button, Image, List, message, Popconfirm, Space, Spin } from "antd";
 import { AddToCart, ReduceQuantity } from "../../helpers/cartHelper";
 import { getPathImage } from "../../helpers/getPathImage";
 import { useSelector } from "react-redux";
 import { generateQueryParams } from "../../helpers/generateQueryParams";
+import { useState } from "react";
 
 const CartContainersLeft = (props) => {
-  const { cart, dispatch } = props;
+  const { cart, dispatch, setLoading } = props;
   const formatCurrency = (price) => {
     return price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
   };
@@ -18,12 +19,16 @@ const CartContainersLeft = (props) => {
   const totalPrice = (price, discount, quantity) => {
     return (price - (price * discount / 100)) * quantity;
   };
-  const handleAddToCart = (productID) => {
-    AddToCart(productID, 1, dispatch);
+  const handleAddToCart = async (productID) => {
+    setLoading(true);
+    await AddToCart(productID, 1, dispatch);
+    setLoading(false);
   }
 
-  const handleReduceQuantity = (productID) => {
-    ReduceQuantity(productID, 1, dispatch);
+  const handleReduceQuantity = async (productID) => {
+    setLoading(true);
+    await ReduceQuantity(productID, 1, dispatch);
+    setLoading(false);
   }
   const cancel = (e) => {
     message.error('Đã hủy thao tác!');

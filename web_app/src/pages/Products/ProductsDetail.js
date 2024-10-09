@@ -145,7 +145,7 @@ const ProductsDetail = () => {
                     </Button>
                     <div>
                       <h1>{product.name}&nbsp;{product.productVariant.option !== "No Option" && product.productVariant.option}&nbsp;Màu {product.productVariant.color}</h1>
-                      {wBrowser < 480 && <Image src={getPathImage(product.productVariant.thumbnail)}></Image>}
+                      {wBrowser < 480 && <Image src={getPathImage(product.productVariant.thumbnail)} alt="Ảnh sản phẩm"></Image>}
                       <br></br>
                       <Space>
                         <Space.Compact direction="vertical">

@@ -1,4 +1,4 @@
-import { Button, Card, Pagination } from 'antd';
+import { Button, Card, Pagination, Spin } from 'antd';
 import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import StatusOrders from './StatusOrders';
@@ -12,6 +12,7 @@ import { NavLink } from 'react-router-dom';
 const Orders = () => {
   const [ordersList, setOrdersList] = useState();
   const connectionRef = useRef(null); // Sử dụng useRef để lưu trữ connection
+  const [loading, setLoading] = useState(false);
 
   //Pagination
   const [currentPage, setCurrentPage] = useState(1);
@@ -24,6 +25,7 @@ const Orders = () => {
   //END Pagination  
   useEffect(() => {
     const startConnect = async () => {
+      setLoading(true);
       const newConnection = await connectSignalR("/ordersHub");
       connectionRef.current = newConnection; // Lưu connection vào useRef
       try {
@@ -42,6 +44,9 @@ const Orders = () => {
       } catch (error) {
         console.log("Error:", error.message);
       }
+      finally {
+        setLoading(false);
+      }
     }
 
     startConnect();
@@ -58,34 +63,36 @@ const Orders = () => {
       <div className="userDetails">
         <h1>TRA CỨU ĐƠN HÀNG</h1>
         <br></br>
-        {paginatedOrders && (paginatedOrders.length > 0 ?
-          (paginatedOrders.map((order, index) =>
-          (<div key={index}>
-            <Card
-              title={<>
-                <div className="title">
-                  <div>
-                    <ViewOrder orders={order}></ViewOrder>{`Đơn hàng: ${order.code}`}
+        <Spin spinning={loading} style={{ minHeight: "50vh", width: "100%" }}>
+          {paginatedOrders && (paginatedOrders.length > 0 ?
+            (paginatedOrders.map((order, index) =>
+            (<div key={index}>
+              <Card
+                title={<>
+                  <div className="title">
+                    <div>
+                      <ViewOrder orders={order}></ViewOrder>{`Đơn hàng: ${order.code}`}
+                    </div>
+                    <div>{lastUpdateName(order) == "Unconfirmed" || lastUpdateName(order) == "Processing" ?
+                      <div><UserCancelledButton orderID={order.id} /></div> :
+                      <br></br>}
+                    </div>
                   </div>
-                  <div>{lastUpdateName(order) == "Unconfirmed" || lastUpdateName(order) == "Processing" ?
-                    <div><UserCancelledButton orderID={order.id} /></div> :
-                    <br></br>}
-                  </div>
-                </div>
-              </>}
-              bordered={false}
-              style={{
-                width: "100%",
-              }}
-            >
-              <StatusOrders status={lastUpdateName(order)} time={lastUpdateTime(order)}></StatusOrders>
-            </Card>
-            <br></br>
-          </div>))) :
-          (<div style={{ textAlign: "center" }}>
-            <NoData content="Bạn hiện chưa có lịch sử mua hàng"></NoData>
-            <NavLink to="/products"><Button className="btn__two">Mua hàng ngay</Button></NavLink>
-          </div>))}
+                </>}
+                bordered={false}
+                style={{
+                  width: "100%",
+                }}
+              >
+                <StatusOrders status={lastUpdateName(order)} time={lastUpdateTime(order)}></StatusOrders>
+              </Card>
+              <br></br>
+            </div>))) :
+            (<div style={{ textAlign: "center" }}>
+              <NoData content="Bạn hiện chưa có lịch sử mua hàng"></NoData>
+              <NavLink to="/products"><Button className="btn__two">Mua hàng ngay</Button></NavLink>
+            </div>))}
+        </Spin>
       </div >
       {ordersList && paginatedOrders.length > 0 &&
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '7px' }}>

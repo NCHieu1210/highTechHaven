@@ -71,6 +71,7 @@ const InputAddress = () => {
     }
     else {
       navigate("/orders/payment");
+      window.scrollTo(0, 0);
     }
 
   };

@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { getPathImage } from "../../helpers/getPathImage";
 import Meta from "antd/es/card/Meta";
 import { AddToCart } from "../../helpers/cartHelper";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import './CardProduct.scss';
 import 'animate.css'
 import { AddToFavorites } from "../../helpers/favoritesHelper";
@@ -28,12 +28,21 @@ const HeartIcon = (props) => <Icon component={HeartSvg} {...props} />;
 const CardProduct = (props) => {
   const { product } = props;
   const [isFavorite, setIsFavorite] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [reRender, setReRender] = useState(false);
-  const [loading, setLoading] = useState(true);
   const [showModalLogin, setShowModalLogin] = useState(false);
   const [content, setContent] = useState("");
   const dispatch = useDispatch();
-  const [tooltipVisible, setTooltipVisible] = useState(true); // Khởi tạo trạng thái tooltip
+
+  const [isMobile, setwIsMobile] = useState();
+  const handleResize = () => {
+    setwIsMobile(window.innerWidth <= 1024); // Thay đổi kích thước này theo nhu cầu của bạn
+  };
+  useEffect(() => {
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const checkFavoriteAsync = async () => {
@@ -57,7 +66,12 @@ const CardProduct = (props) => {
     if (checkLoggedIn()) {
       checkFavoriteAsync();
     }
-    setReRender(false);
+    else {
+      setLoading(false);
+    }
+    if (reRender) {
+      setReRender(false)
+    }
   }, [props, reRender])
 
   const discountedPrice = (product) => {
@@ -68,20 +82,15 @@ const CardProduct = (props) => {
     return price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
   };
   const handleAddToCart = async (productVariantID) => {
-    setTooltipVisible(false);
     setLoading(true);
-    await AddToCart(productVariantID, 1, dispatch, setShowModalLogin, setLoading);
+    await AddToCart(productVariantID, 1, dispatch, setShowModalLogin);
     setLoading(false);
-    setTooltipVisible(true);
   }
 
   const handleAddToFavorites = async (optionID) => {
-    setTooltipVisible(false);
     setLoading(true);
     await AddToFavorites(optionID, dispatch, setShowModalLogin);
     setReRender(true);
-    setLoading(true);
-    setTooltipVisible(true);
   }
   const checkDiscount = (product) => {
     return product.discount === 0 ? "ant-ribbon__none" : "";
@@ -105,32 +114,28 @@ const CardProduct = (props) => {
                   style={{ width: "auto", backgroundColor: "#F5F5F5", boxShadow: " 7px 7px 10px rgba(0, 0, 0, 0.1)" }}
                   cover={<img alt={product.name} src={getPathImage(product.productVariants.thumbnail)} />}
                 >
-                  {/* {product.discount > 0 && (
-                <div className="discountBadge">
-                  Giảm {product.discount}%
-                </div>
-              )} */}
                   <div className="productHover">
                     <div></div>
                     <div>
                       <br></br>
-                      <Tooltip title={tooltipVisible ? "Chi tiết" : ""} placement="left" color="#f88d00">
+                      <Tooltip title={!isMobile && "Chi tiết"} placement="left" color="#f88d00">
                         <NavLink
                           to={`/products/${product.slug}?${generateQueryParams({
                             option: product.productVariants.option,
                             color: product.productVariants.color,
-                          })}`}>
+                          })}`}
+                          onClick={() => window.scrollTo(0, 0)}>
                           <Button><InfoCircleOutlined /></Button>
                         </NavLink>
                       </Tooltip>
                       <br></br>
-                      <Tooltip title={tooltipVisible ? "Yêu thích" : ""} placement="left" color="#f88d00">
+                      <Tooltip title={!isMobile && "Yêu thích"} placement="left" color="#f88d00">
                         <Button onClick={() => { handleAddToFavorites(product.productVariants.optionID); setContent("thêm sản phẩm vào danh sách yêu thích."); }}>
                           <HeartOutlined />
                         </Button>
                       </Tooltip>
                       <br></br>
-                      <Tooltip title={tooltipVisible ? "Thêm giỏ hàng" : ""} placement="left" color="#f88d00" >
+                      <Tooltip title={!isMobile && "Thêm giỏ hàng"} placement="left" color="#f88d00" >
                         <Button onClick={() => { handleAddToCart(product.productVariants.id); setContent("thêm sản phẩm vào giỏ hàng."); }} >
                           <ShoppingCartOutlined />
                         </Button>

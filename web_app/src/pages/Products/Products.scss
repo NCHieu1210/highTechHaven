@@ -15,6 +15,10 @@
     display: none;
   }
 
+  .ant-image-mask-info {
+    display: none !important;
+  }
+
   .isSelected {
     border-color: $clorTwoHover !important;
     color: $clorTwoHover !important;

@@ -26,7 +26,7 @@ const SectionPostInHome = (props) => {
         {posts && (posts.map((item, index) => {
           return (
             <SwiperSlide key={index}>
-              <NavLink className="navLink" to={`/post/${item.slug}`} >
+              <NavLink className="navLink" to={`/post/${item.slug}`} onClick={() => window.scrollTo(0, 0)} >
                 <Card
                   hoverable
                   style={{ width: "auto", backgroundColor: "#F5F5F5" }}
@@ -39,7 +39,7 @@ const SectionPostInHome = (props) => {
           )
         }))
         }
-      </Swiper>
+      </Swiper >
       <br></br>
       <br></br>
       <br></br>

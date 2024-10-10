@@ -173,7 +173,7 @@ const Post = () => {
                     itemLayout="horizontal"
                     dataSource={paginatedPosts}
                     renderItem={(item, index) => (
-                      <NavLink to={`/post/${item.slug}`}>
+                      <NavLink to={`/post/${item.slug}`} onClick={() => window.scrollTo(0, 0)}>
                         <List.Item>
                           <List.Item.Meta
                             avatar={<Avatar className="content__avatar" src={getPathImage(item.thumbnail)} alt={item.name} />}

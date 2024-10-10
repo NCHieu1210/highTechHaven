@@ -77,6 +77,12 @@
         }
       }
 
+      @media screen and (max-width: $mobile-width) {
+        &>div {
+          padding: 20px 15px;
+        }
+      }
+
       .content__content {
 
         figure {
@@ -132,7 +138,7 @@
           @include display-flex();
           justify-content: space-between;
 
-          &--right {
+          &--left {
             @include display-flex();
 
             .ant-avatar {
@@ -151,7 +157,7 @@
             }
           }
 
-          &--left {
+          &--right {
             color: gray;
 
             svg {
@@ -165,6 +171,12 @@
 
               &:hover svg {
                 color: #0637fc;
+              }
+            }
+
+            @media screen and (max-width: $mobile-width) {
+              .content__author--span {
+                display: none;
               }
             }
           }

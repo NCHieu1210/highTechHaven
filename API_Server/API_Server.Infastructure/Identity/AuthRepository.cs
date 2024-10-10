@@ -172,7 +172,7 @@ namespace API_Server.Infastructure.Identity
             }
 
             var token = await _userManager.GeneratePasswordResetTokenAsync(appUser);
-            var resetLink = $"http://localhost:3000/reset-password?token={Uri.EscapeDataString(token)}";
+            var resetLink = $"http://hth-ecom.vercel.app/reset-password?token={Uri.EscapeDataString(token)}";
 
             await _emailSender.SendEmailAsync(email, "Lấy lại mậy khẩu", $"Vui lòng đặt lại mật khẩu của bạn bằng liên kết sau: {resetLink}");
         }

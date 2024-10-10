@@ -4,22 +4,22 @@ import { Col, Pagination, Row } from "antd";
 import { useEffect, useState } from "react";
 import { getByRangeCategoriesService, getProductByRangeCategoriesService, getProductByRangeSuppliersService, getRangeCategoriesAndSuppliersService } from "../../services/productsService";
 import { arrangeProducts, categoriesIsSelect, suppliersIsSelect } from "../../actions/optionsProductAction";
+import { loading } from "../../actions/loadingAction";
 
 const Product = () => {
   const productsStore = useSelector((state) => state.data.products);
   const optionsProduct = useSelector(state => state.optionsProduct.values);
   const getCategoriesIsSelect = useSelector((state) => state.optionsProduct.categoriesID);
   const getSuppliersIsSelect = useSelector((state) => state.optionsProduct.suppliersID);
+  const isLoading = useSelector((state) => state.loading);
   const [productsIsArrange, setProductsIsArrange] = useState([]);
   const [products, setProducts] = useState(productsStore);
   const dispath = useDispatch();
 
   const [wBrowser, setwBrowser] = useState();
-
   const handleResize = () => {
     setwBrowser(window.innerWidth); // Thay đổi kích thước này theo nhu cầu của bạn
   };
-
   useEffect(() => {
     handleResize();
     window.addEventListener('resize', handleResize);
@@ -70,6 +70,9 @@ const Product = () => {
         break;
       default: setProductsIsArrange(sortedProducts);
         break;
+    }
+    if (isLoading) {
+      dispath(loading(false))
     }
   }, [optionsProduct, products])
 

@@ -1,6 +1,5 @@
 import { FilterOutlined, SwapOutlined } from "@ant-design/icons";
 import { Select, Tree } from "antd";
-import { useEffect, useState } from "react";
 
 const Filter = (props) => {
   const {

@@ -63,12 +63,10 @@ const Post = () => {
 
 
   const onExpand = (expandedKeysValue) => {
-    console.log('onExpand', expandedKeysValue);
     setExpandedKeys(expandedKeysValue);
     setAutoExpandParent(false);
   };
   const onCheck = (checkedKeysValue) => {
-    console.log(checkedKeysValue)
     setCheckedKeys(checkedKeysValue);
     if (checkedKeysValue.find(key => key === '-1')) {
       setPosts(postStore);
@@ -81,7 +79,6 @@ const Post = () => {
     }
   };
   const onSelect = (selectedKeysValue, info) => {
-    console.log('onSelect', info);
     setSelectedKeys(selectedKeysValue);
   };
   //END bộ lọc

@@ -5,12 +5,14 @@ import { useEffect, useState } from "react";
 import { getRangeCategoriesAndSuppliersService } from "../../services/productsService";
 import { arrangeProducts, categoriesIsSelect, suppliersIsSelect } from "../../actions/optionsProductAction";
 import { useParams } from "react-router-dom";
+import { loading } from "../../actions/loadingAction";
 
 const Suppliers = () => {
   const productsStore = useSelector((state) => state.data.products);
   const suppliersStore = useSelector((state) => state.data.suppliers);
   const optionsProduct = useSelector(state => state.optionsProduct.values);
   const getCategoriesIsSelect = useSelector((state) => state.optionsProduct.categoriesID);
+  const isLoading = useSelector((state) => state.loading);
   const [productsIsArrange, setProductsIsArrange] = useState([]);
   const [products, setProducts] = useState([]);
   const [suppliersByParams, setSuppliersByParams] = useState([]);
@@ -18,7 +20,6 @@ const Suppliers = () => {
   const params = useParams();
 
   const [wBrowser, setwBrowser] = useState();
-
   const handleResize = () => {
     setwBrowser(window.innerWidth); // Thay đổi kích thước này theo nhu cầu của bạn
   };
@@ -55,18 +56,23 @@ const Suppliers = () => {
 
 
   useEffect(() => {
-    let sortedProducts = [...products];
-    switch (optionsProduct) {
-      case "0": setProductsIsArrange(sortedProducts);
-        break;
-      case "1": setProductsIsArrange(sortedProducts.sort((a, b) => b.productVariants.price - a.productVariants.price));
-        break;
-      case "2": setProductsIsArrange(sortedProducts.sort((a, b) => a.productVariants.price - b.productVariants.price));
-        break;
-      case "3": setProductsIsArrange(sortedProducts.sort((a, b) => b.productVariants.discount - a.productVariants.discount));
-        break;
-      default: setProductsIsArrange(sortedProducts);
-        break;
+    if (Array.isArray(products)) {
+      let sortedProducts = [...products];
+      switch (optionsProduct) {
+        case "0": setProductsIsArrange(sortedProducts);
+          break;
+        case "1": setProductsIsArrange(sortedProducts.sort((a, b) => b.productVariants.price - a.productVariants.price));
+          break;
+        case "2": setProductsIsArrange(sortedProducts.sort((a, b) => a.productVariants.price - b.productVariants.price));
+          break;
+        case "3": setProductsIsArrange(sortedProducts.sort((a, b) => b.productVariants.discount - a.productVariants.discount));
+          break;
+        default: setProductsIsArrange(sortedProducts);
+          break;
+      }
+    }
+    if (isLoading) {
+      dispath(loading(false))
     }
   }, [optionsProduct, products])
 

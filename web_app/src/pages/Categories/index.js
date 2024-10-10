@@ -1,16 +1,19 @@
 import { useDispatch, useSelector } from "react-redux";
 import CardProduct from "../Products/CardProduct";
-import { Col, Pagination, Row } from "antd";
+import { Col, Pagination, Row, Spin } from "antd";
 import { useEffect, useState } from "react";
 import { getRangeCategoriesAndSuppliersService } from "../../services/productsService";
 import { arrangeProducts, categoriesIsSelect, suppliersIsSelect } from "../../actions/optionsProductAction";
 import { useParams } from "react-router-dom";
+import NoData from "../../components/NoData";
+import { loading } from "../../actions/loadingAction";
 
 const Categories = () => {
   const productsStore = useSelector((state) => state.data.products);
   const categoriesStore = useSelector((state) => state.data.categories);
   const optionsProduct = useSelector(state => state.optionsProduct.values);
   const getSuppliersIsSelect = useSelector((state) => state.optionsProduct.suppliersID);
+  const isLoading = useSelector((state) => state.loading);
   const [productsIsArrange, setProductsIsArrange] = useState([]);
   const [products, setProducts] = useState([]);
   const [categoriesByParams, setCategoriesByParams] = useState([]);
@@ -45,6 +48,10 @@ const Categories = () => {
     }
     else if (getCategories && getCategories.subCategories.length > 0) {
       getCategories = [...getCategories.subCategories];
+      setCategoriesByParams(getCategories);
+    }
+    else {
+      setCategoriesByParams(getCategories);
     }
 
     const productsInCategory = [];
@@ -62,7 +69,14 @@ const Categories = () => {
 
   useEffect(() => {
     let arrayCategoryID = [];
-    arrayCategoryID.push(categoriesByParams.id);
+    if (Array.isArray(categoriesByParams)) {
+      categoriesByParams.map(category => {
+        arrayCategoryID.push(category.id);
+      })
+    }
+    else {
+      arrayCategoryID.push(categoriesByParams.id);
+    }
     if (getSuppliersIsSelect.length > 0) {
       const getCategorire = async () => {
         const response = await getRangeCategoriesAndSuppliersService(arrayCategoryID, getSuppliersIsSelect);
@@ -72,20 +86,24 @@ const Categories = () => {
     }
   }, [getSuppliersIsSelect])
 
-
   useEffect(() => {
-    let sortedProducts = [...products];
-    switch (optionsProduct) {
-      case "0": setProductsIsArrange(sortedProducts);
-        break;
-      case "1": setProductsIsArrange(sortedProducts.sort((a, b) => b.productVariants.price - a.productVariants.price));
-        break;
-      case "2": setProductsIsArrange(sortedProducts.sort((a, b) => a.productVariants.price - b.productVariants.price));
-        break;
-      case "3": setProductsIsArrange(sortedProducts.sort((a, b) => b.productVariants.discount - a.productVariants.discount));
-        break;
-      default: setProductsIsArrange(sortedProducts);
-        break;
+    if (Array.isArray(products)) {
+      let sortedProducts = [...products];
+      switch (optionsProduct) {
+        case "0": setProductsIsArrange(sortedProducts);
+          break;
+        case "1": setProductsIsArrange(sortedProducts.sort((a, b) => b.productVariants.price - a.productVariants.price));
+          break;
+        case "2": setProductsIsArrange(sortedProducts.sort((a, b) => a.productVariants.price - b.productVariants.price));
+          break;
+        case "3": setProductsIsArrange(sortedProducts.sort((a, b) => b.productVariants.discount - a.productVariants.discount));
+          break;
+        default: setProductsIsArrange(sortedProducts);
+          break;
+      }
+    }
+    if (isLoading) {
+      dispath(loading(false))
     }
   }, [optionsProduct, products])
 
@@ -101,7 +119,7 @@ const Categories = () => {
 
   return (
     <>
-      {products && (
+      {products ? (
         <>
           <Row gutter={wBrowser > 1024 ? [50, 50] : [20, 50]}>
             {paginatedProducts && paginatedProducts.map((product) =>
@@ -119,7 +137,10 @@ const Categories = () => {
           />
           <br></br>
         </>
-      )}
+      ) : (
+        <NoData content={"Không có sản phẩm phù hợp"} ></NoData>
+      )
+      }
     </>
   );
 }

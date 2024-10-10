@@ -1,15 +1,16 @@
-import { FilterOutlined, SwapOutlined } from "@ant-design/icons";
-import { Button, Cascader, Drawer, Layout, Select, Space, Tree } from "antd";
+import { FilterOutlined } from "@ant-design/icons";
+import { Button, Drawer, Layout, Select, Space, Spin, Tree } from "antd";
 import { Content } from "antd/es/layout/layout";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Outlet, useLocation, useParams } from "react-router-dom";
 import './UserListProductLayout.scss'
 import { arrangeProducts, categoriesIsSelect, suppliersIsSelect } from "../../actions/optionsProductAction";
+import { reRender } from "../../actions/reRender";
 import Filter from "./Filter";
+import { loading } from "../../actions/loadingAction";
 
 const ListProductsLayout = () => {
-
   const [expandedKeys, setExpandedKeys] = useState([]);
   const [checkedKeys, setCheckedKeys] = useState([]);
   const [selectedKeys, setSelectedKeys] = useState([]);
@@ -18,6 +19,7 @@ const ListProductsLayout = () => {
   const [title, setTitle] = useState('');
   const categories = useSelector((state) => state.data.categories);
   const suppliers = useSelector((state) => state.data.suppliers);
+  const isLoading = useSelector((state) => state.loading);
   const dispatch = useDispatch();
   const params = useParams();
   const location = useLocation();
@@ -113,7 +115,6 @@ const ListProductsLayout = () => {
           }
         ]);
       }
-
     } catch (error) {
       console.error('Failed to fetch categories and suppliers:', error);
     }
@@ -121,12 +122,12 @@ const ListProductsLayout = () => {
 
 
   const onExpand = (expandedKeysValue) => {
-    console.log('onExpand', expandedKeysValue);
     setExpandedKeys(expandedKeysValue);
     setAutoExpandParent(false);
   };
-  const onCheck = (checkedKeysValue) => {
-    console.log('onCheck', checkedKeysValue);
+
+  const onCheck = async (checkedKeysValue) => {
+    checkedKeysValue.length > 0 && dispatch(loading(true));
     setCheckedKeys(checkedKeysValue);
     // Separate category and supplier keys
     const categoryKeys = checkedKeysValue.filter(key => key.startsWith('category_')).map(key => key.split('_')[1]);
@@ -235,9 +236,11 @@ const ListProductsLayout = () => {
               </Filter>
             </div>}
             <div className="layout__content">
-              <Content>
-                <Outlet />
-              </Content>
+              <Spin spinning={isLoading}>
+                <Content>
+                  <Outlet />
+                </Content>
+              </Spin>
             </div >
           </div >
         </Layout >

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("API_Server.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+88cd246bee805df1a691276b27a11e51b88378b3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+54acfaa52d774a9bf9a8fcf757ac4b30b39700a8")]
 [assembly: System.Reflection.AssemblyProductAttribute("API_Server.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("API_Server.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

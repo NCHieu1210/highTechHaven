@@ -78,12 +78,8 @@
 
       div:last-child {
         margin-right: 22px;
-        margin-top: 15px;
+        margin-top: 0px;
         height: 100%;
-
-        @media screen and (max-width: $desktop-width) {
-          margin-top: 55px;
-        }
       }
 
       button {
@@ -99,6 +95,7 @@
 
         span {
           color: $clorOne;
+
         }
 
         &:hover {
@@ -112,6 +109,11 @@
         @media screen and (max-width: $mobile-width) {
           width: 35px;
           height: 35px;
+
+          span,
+          svg {
+            font-size: calc(9px + 1vmin);
+          }
         }
       }
     }

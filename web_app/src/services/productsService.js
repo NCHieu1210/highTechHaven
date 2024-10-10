@@ -51,7 +51,6 @@ export const getProductByRangeSuppliersService = async (ids) => {
 
 export const getRangeCategoriesAndSuppliersService = async (idsCategory, idsSupplier) => {
   let path = `/Products/range-categories-and-suppliers?idsCategory=${idsCategory[0]}`
-
   idsCategory[1] && (idsCategory.forEach(item => {
     path += `&idsCategory=${item}`
   }));

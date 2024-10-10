@@ -5,7 +5,6 @@ const getToken = () => {
   return getCookie("hthToken");
 };
 
-
 //Login async
 export const login = async (path, username, password) => {
   const response = await fetch(API_Domain + path, {

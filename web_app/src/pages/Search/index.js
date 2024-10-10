@@ -5,14 +5,26 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CardProduct from "../Products/CardProduct";
 import { getProductBySearchService } from "../../services/productsService";
+import { loading } from "../../actions/loadingAction";
 
 const Search = () => {
   const productsStore = useSelector((state) => state.data.products);
   const optionsProduct = useSelector(state => state.optionsProduct.values);
+  const isLoading = useSelector((state) => state.loading);
   const [productsIsArrange, setProductsIsArrange] = useState([]);
   const [products, setProducts] = useState(productsStore);
   const dispath = useDispatch();
   const { search } = useParams();
+
+  const [wBrowser, setwBrowser] = useState();
+  const handleResize = () => {
+    setwBrowser(window.innerWidth); // Thay đổi kích thước này theo nhu cầu của bạn
+  };
+  useEffect(() => {
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     dispath(arrangeProducts(0));
@@ -43,6 +55,9 @@ const Search = () => {
       default: setProductsIsArrange(sortedProducts);
         break;
     }
+    if (isLoading) {
+      dispath(loading(false))
+    }
   }, [optionsProduct, products])
 
   //Pagination
@@ -61,9 +76,9 @@ const Search = () => {
         (<h2 className="text-center">Có {products.length} sản phẩm trùng khớp</h2>)}
       <br></br>
       <br></br>
-      <Row gutter={[50, 50]}>
+      <Row gutter={wBrowser > 1024 ? [50, 50] : [20, 50]}>
         {paginatedProducts && paginatedProducts.map((product) =>
-          <Col span={6} key={product.id}>
+          <Col xs={12} sm={8} xl={6} key={product.id}>
             <CardProduct product={product} />
           </Col>
         )}

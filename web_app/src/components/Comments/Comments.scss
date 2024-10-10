@@ -94,6 +94,8 @@
 
   &__footer {
     width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
 
     button {
       border-color: white;
@@ -144,6 +146,17 @@
 
       &--quantityLike {
         margin-left: 5px;
+      }
+
+      span,
+      svg {
+        font-size: calc(8px + 1vmin) !important;
+      }
+
+      .ant-space-item:nth-child(2) button {
+        svg {
+          // margin-right: -5px;
+        }
       }
     }
   }
